@@ -1,11 +1,11 @@
 {
   "name": "xpi-json-model",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "xpi json schemas and test data",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --config jestconfig.json",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"lib/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
@@ -19,7 +19,12 @@
     "type": "git",
     "url": "git+https://github.com/emozhzhukhin/xpi-json-model.git"
   },
-  "keywords": ["xpi", "schema", "json", "model"],
+  "keywords": [
+    "xpi",
+    "schema",
+    "json",
+    "model"
+  ],
   "author": "E.M.",
   "license": "ISC",
   "bugs": {
