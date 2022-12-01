@@ -1,0 +1,21 @@
+{
+    "ProjectName" : "SFProject",
+    "BusinessProcesses" : [
+        {
+            "Id": 1,
+            "Name": "BP1",
+            "Flows": [
+                {
+                    "Id": 1,
+                    "Name" : "Flow1",
+                    "Steps" : [
+                        {
+                            "Id": 1,
+                            "Name": "NOP"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

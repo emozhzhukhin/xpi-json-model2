@@ -1,0 +1,57 @@
+{
+  "$id": "https://magicsoftware.com/schemas/xpi/project/flow",
+  "description" : "XPI flow description",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "number"
+    },
+    "Name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 30
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Order": {
+      "type": "number"
+    },
+    "isInactive" : 
+    {
+      "type": "boolean"
+    },
+    "isDisabled" : {
+      "type": "boolean"
+    },
+    "isTwoPhase": {
+      "type": "boolean"
+    },
+    "isAutoStart": {
+      "type": "boolean"
+    },
+    "MaxInstances": {
+      "type": "number"
+    },
+    "isAutoRepeat": {
+      "type": "boolean"
+    },
+
+    "Steps" : {
+      "description" : "Steps defined for the flow",
+      "type" : "array",
+      "items": {
+          "$ref": "step"
+      }
+    },
+    "Flow Variables": {
+      "description" : "The Flow Variables repository is a storage area that is used by the flow components to save and retrieve data items.",
+      "type" : "array",
+      "items": {
+          "$ref": "https://magicsoftware.com/schemas/xpi/repositories/variable"
+      }
+    }
+    
+  },
+  "required" : ["Id", "Name"]
+}

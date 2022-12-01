@@ -1,4 +1,4 @@
-import { Greeter } from '../index';
-test('My Greeter', () => {
-  expect(Greeter('Carl')).toBe('Hello Carl');
+import { schemasCompileAndValidate } from '../index';
+test('compiling and validationg all the schemas', () => {
+  expect(schemasCompileAndValidate()).toBe(true);
 });

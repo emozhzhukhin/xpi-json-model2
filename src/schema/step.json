@@ -1,0 +1,49 @@
+{
+  "$id": "https://magicsoftware.com/schemas/xpi/project/step",
+  "description" : "XPI step description",
+  "type": "object",
+  "properties": {
+    "Id": {
+      "type": "number"
+    },
+    "Name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 30
+    },
+    "Description": {
+      "type": "string"
+    },
+    "SortOrder": {
+      "type": "number"
+    },
+    "ParentStepID": {
+      "type": "number"
+    },
+    "IFCDefinition": {
+      "type": "number"
+    },
+    "ProcessMode": {
+      "type": "number"
+    },
+    "isGoTo": {
+      "type": "boolean"
+    },
+    "isTwoPhase": {
+      "type": "boolean"
+    },
+    "isWait4Comp": {
+      "type": "boolean"
+    },
+    "isSavePoint": {
+      "type": "boolean"
+    },
+    "CallLogicFlow": {
+      "type": "boolean"
+    },
+    "isReturnXML": {
+      "type": "boolean"
+    }
+  },
+  "required" : ["Id", "Name"]
+}
