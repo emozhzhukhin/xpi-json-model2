@@ -5,6 +5,7 @@
     "version": "0.2.0",
     "configurations": 
     [
+
         {
             "name": "Debug Jest Tests",
             "type": "node",
@@ -16,6 +17,29 @@
             "outFiles": [
                 "${workspaceFolder}/lib/**/*.js"
             ]
-        }
+        },
+        {
+            "name": "Debug index.ts directly",
+            "type":"node",
+            "request":"launch",
+            "preLaunchTask": "tsc: build - tsconfig.json",
+            "program":"${workspaceFolder}/src/utils.ts",
+            "stopOnEntry":false,
+            "args":[],
+            "cwd":"${workspaceFolder}/.",
+            "runtimeExecutable":null,
+            "runtimeArgs":[
+                "--nolazy"
+            ],
+            "env":{
+                "NODE_ENV":"development"
+            },
+            "console":"integratedTerminal",
+            "sourceMaps":true,
+            "outFiles":[
+                "${workspaceFolder}/lib/**/*.js"
+            ]
+            
+        }        
     ]
 }

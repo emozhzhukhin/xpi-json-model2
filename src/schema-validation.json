@@ -1,0 +1,32 @@
+{
+  "resources": [
+    "resource-element.json",
+    "resources.json",
+    {
+      "data": [
+        "resources-data.json"
+      ]
+    }
+  ],
+  "services": [
+    "resource-element.json",
+    "services.json",
+    {
+      "data": [
+        "resources-data.json"
+      ]
+    }
+  ],
+  "project": [
+    "repositories.json",
+    "step.json",
+    "flow.json",
+    "business-process.json",
+    "project.json",
+    {
+      "data": [
+        "project-data.json"
+      ]
+    }
+  ]
+}

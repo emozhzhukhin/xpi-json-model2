@@ -47,3 +47,5 @@ export function schemasCompileAndValidate(): boolean {
   console.log('end validation');
   return true;
 }
+
+schemasCompileAndValidate();
