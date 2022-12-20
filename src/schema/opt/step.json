@@ -1,0 +1,33 @@
+{
+  "$id": "https://magicsoftware.com/schemas/xpi/opt/project/step",
+  "description" : "XPI step description",
+  "type": "object",
+  "properties": {
+    "stepId": {
+      "type": "string",
+      "description": "step id is requiried as a step name is not unique"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 30
+    },
+    "description": {
+      "type": "string"
+    },
+    "component": {
+      "$ref": "https://magicsoftware.com/schemas/xpi/opt/component"
+    },
+    "callLogicFlow": {
+      "type": "boolean"
+    },
+    "savePoint": {
+      "type": "boolean"
+    },
+    "resource": {
+      "$ref": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element"
+    }
+  },
+  "required" : ["stepId", "name", "component"]
+
+}
