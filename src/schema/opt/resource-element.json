@@ -1,0 +1,99 @@
+{
+    "$id": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element",
+    "description": "XPI resource element",
+    "type": "object",
+
+    "properties": {
+
+      "name": {
+        "type": "string",
+        "description": "A name of the resource"
+      },
+      "type": {
+        "type": "string",
+        "description": "It is a resource type: Salesforce, SugarCrm, Database etc"
+      },
+      "default" : {
+        "type": "string",
+        "description": "A name of the default resource"
+      },
+      
+      "resourceDefinitions": {
+        "type": "array",
+        "items": {
+          "$ref": "/schemas/xpi/opt/resources/resource-definition"
+        }
+      }
+    },
+    "required": [ "name", "type", "default", "resourceDefinitions" ],
+
+    "$defs": {
+      "resourceDefinition": {
+        "$id": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-definition",
+        "description": "XPI resource definition",
+        "type": "object",
+
+        "properties": {
+
+          "name": {
+            "type": "string",
+            "description": "A name of the concrete resource",
+            "minLength": 1,
+            "maxLength": 30
+          },
+
+          "description": {
+            "type": "string",
+            "description": "A description of the resource specified"
+          },
+
+          "resourceProperties": {
+            "type": "array",
+            "items" : {
+              "$ref": "/schemas/xpi/opt/resources/resource-property"
+            }
+          }
+
+        },
+        "required": [
+          "name",
+          "resourceProperties"
+        ]
+
+      },
+
+      "resourceProperty": {
+        "$id": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-property",
+        "description": "XPI resource property description",
+        "type": "object",
+
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "A separate enum of all property names is needed"
+          },
+          "type" : {
+            "type": "string",
+            "enum": [
+              "Alpha",
+              "Blob",
+              "Date",
+              "Logical",
+              "Numeric",
+              "Time"              
+            ]
+          },
+          "format": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string",
+            "description": "A value of the corresponding property"
+          }
+        },
+        "required" : [
+          "name"
+        ]
+      }
+    }
+}

@@ -21,12 +21,13 @@ function validateCallback(elem: (string | {data: string[]}), name: string) {
             if (!valid) console.log(ajv.errors);
             else console.log(name +' validation successful');
           
-        })
+        });
     }
 
 }
 
 function loadSchemas() {
+
     schemaValidation.resources.forEach(elem => {
         validateCallback(elem, 'resources');
     });
@@ -36,6 +37,9 @@ function loadSchemas() {
     schemaValidation.project.forEach(elem => {
         validateCallback(elem, 'project');
     });
+    schemaValidation['step-opt'].forEach(elem => {
+        validateCallback(elem, 'step-opt');
+    });
 }
 
 function addSchema(schema: any) {
@@ -43,10 +47,11 @@ function addSchema(schema: any) {
         ajv.addSchema(schema).compile(schema);
     } catch (e) {
         if(e instanceof Error) {
-            if(e.message.indexOf('already exists') > -1) {
-              console.error(e.message);
+            if(e.message.indexOf('schema with key or id') > -1 && e.message.indexOf('already exists') > -1) {
+              console.warn(e.message);
               return;
             }
+            console.error(e.message);
         }
         throw e;
     }

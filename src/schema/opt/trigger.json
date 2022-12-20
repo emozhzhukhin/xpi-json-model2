@@ -1,0 +1,33 @@
+{
+  "$id": "https://magicsoftware.com/schemas/xpi/opt/project/trigger",
+  "description" : "XPI trigger description",
+  "type": "object",
+
+  "properties": {
+    "triggerId": {
+      "type": "string",
+      "description": "trigger id is requiried as a trigger name is not unique"
+    },
+
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 30
+    },
+
+    "description": {
+      "type": "string"
+    },
+
+    "component": {
+      "$ref": "https://magicsoftware.com/schemas/xpi/opt/component"
+    },
+
+    "service": {
+      "$ref": "resources/resource-element"
+    }
+
+  },
+  "required" : ["triggerId", "name", "component"]
+
+}

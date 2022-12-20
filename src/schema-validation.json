@@ -28,5 +28,15 @@
         "project-data.json"
       ]
     }
+  ],
+  "step-opt": [
+    "opt\\component.json",
+    "opt\\resource-element.json",
+    "opt\\step.json",
+    {
+      "data": [
+        "step-opt-data.json"
+      ]
+    }
   ]
 }

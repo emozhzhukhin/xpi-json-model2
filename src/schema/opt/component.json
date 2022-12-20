@@ -1,0 +1,39 @@
+{
+    "$id": "https://magicsoftware.com/schemas/xpi/opt/component",
+    "description" : "XPI component description",
+    "type": "object",
+
+    "$defs" : {
+        "stepOrTrigger" : {
+             "type": "string",
+             "enum": [
+                 "step",
+                 "trigger",
+                 "step and trigger"
+             ]
+ 
+        },
+        "category" : {
+            "type": "string",
+            "enum": [
+                "Utilities",
+                "Triggers",
+                "Converters",
+                "File Management",
+                "Connectors",
+                "Communication",
+                "Mail",
+                "Messaging",
+                "General"
+            ]
+
+       }
+     },
+ 
+    "properties": {
+        "name": {"type": "string"},
+        "type": {"$ref": "#/$defs/stepOrTrigger"},
+        "category": {"$ref": "#/$defs/category"}
+    }
+
+  }
