@@ -1,0 +1,10 @@
+{
+    
+    "$id": "https://magicsoftware.com/schemas/xpi/opt/components",
+    "description" : "XPI components description",
+
+    "type": "array",
+    "items" : {
+        "$ref": "https://magicsoftware.com/schemas/xpi/opt/component"
+    }
+}

@@ -1,9 +1,0 @@
-{
-    "stepId": "Save Message1",
-    "name": "Save Message",
-    "component": {
-        "name": "Save Message", 
-        "type": "step", 
-        "category": "Utilities"
-    }
-}

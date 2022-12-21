@@ -11,20 +11,24 @@
 
     "name": {
       "type": "string",
+      "description": "Trigger's name",
       "minLength": 1,
       "maxLength": 30
     },
 
     "description": {
-      "type": "string"
+      "type": "string",
+      "description": "Trigger's description"
     },
 
     "component": {
-      "$ref": "https://magicsoftware.com/schemas/xpi/opt/component"
+      "$ref": "https://magicsoftware.com/schemas/xpi/opt/component",
+      "description": "A name or a link of the component attached"
     },
 
     "service": {
-      "$ref": "resources/resource-element"
+      "$ref": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element",
+      "description": "How to define here 2 fields (name and description) from resource-element???"
     }
 
   },

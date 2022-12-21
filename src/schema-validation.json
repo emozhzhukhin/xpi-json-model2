@@ -30,13 +30,23 @@
     }
   ],
   "step-opt": [
-    "opt\\component.json",
     "opt\\resource-element.json",
+    "opt\\component.json",
     "opt\\step.json",
     {
       "data": [
-        "step-opt-data.json"
+        "step-sf-data.json",
+        "step-sm-data.json"
+      ]
+    }
+  ],
+  "components-opt": [
+    "opt\\components.json",
+    {
+      "data": [
+        "components-opt-data.json"
       ]
     }
   ]
+
 }

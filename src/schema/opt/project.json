@@ -60,9 +60,9 @@
       "type": "string",
       "description": "Resource settings file"
     },
-    "rervices": {
+    "services": {
       "type": "string",
-      "description": "Services settings file"
+      "description": "Services settings file",
     },
     "calendars": {
       "type": "string",

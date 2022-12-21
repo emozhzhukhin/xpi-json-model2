@@ -7,7 +7,11 @@
 
       "name": {
         "type": "string",
-        "description": "A name of the resource"
+        "description": "A name of a resource"
+      },
+      "description" : {
+        "type": "string",
+        "description": "Defines a resource description visible in UI"
       },
       "type": {
         "type": "string",
@@ -15,11 +19,12 @@
       },
       "default" : {
         "type": "string",
-        "description": "A name of the default resource"
+        "description": "A name of a default resource"
       },
       
       "resourceDefinitions": {
         "type": "array",
+        "description": "",
         "items": {
           "$ref": "/schemas/xpi/opt/resources/resource-definition"
         }
@@ -34,21 +39,19 @@
         "type": "object",
 
         "properties": {
-
           "name": {
             "type": "string",
             "description": "A name of the concrete resource",
             "minLength": 1,
             "maxLength": 30
           },
-
           "description": {
             "type": "string",
             "description": "A description of the resource specified"
           },
-
           "resourceProperties": {
             "type": "array",
+            "description": "Array of properties for the resource",
             "items" : {
               "$ref": "/schemas/xpi/opt/resources/resource-property"
             }
@@ -70,10 +73,11 @@
         "properties": {
           "name": {
             "type": "string",
-            "description": "A separate enum of all property names is needed"
+            "description": "A separate enum of all property names exists in the old xpi cloud. Do we need it?"
           },
           "type" : {
             "type": "string",
+            "description": "Xpi data types. Move to another JSON?",
             "enum": [
               "Alpha",
               "Blob",
@@ -84,7 +88,8 @@
             ]
           },
           "format": {
-            "type": "string"
+            "type": "string",
+            "description": "In most cases is a lenght"
           },
           "value": {
             "type": "string",

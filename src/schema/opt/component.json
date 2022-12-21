@@ -1,20 +1,22 @@
 {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://magicsoftware.com/schemas/xpi/opt/component",
-    "description" : "XPI component description",
+    "description" : "XPI components description",
     "type": "object",
-
     "$defs" : {
         "stepOrTrigger" : {
-             "type": "string",
-             "enum": [
-                 "step",
-                 "trigger",
-                 "step and trigger"
-             ]
- 
+                "type": "string",
+                "description": "A component can be implemented either as a step or as a trigger or as both",
+                "enum": [
+                    "step",
+                    "trigger",
+                    "step and trigger"
+                ]
+
         },
         "category" : {
             "type": "string",
+            "description": "Specifies the groups to which a component can belong",
             "enum": [
                 "Utilities",
                 "Triggers",
@@ -26,14 +28,37 @@
                 "Messaging",
                 "General"
             ]
-
-       }
-     },
- 
+        }
+    },
     "properties": {
-        "name": {"type": "string"},
-        "type": {"$ref": "#/$defs/stepOrTrigger"},
-        "category": {"$ref": "#/$defs/category"}
-    }
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "type": {
+            "$ref": "#/$defs/stepOrTrigger"
+        },
+        "categories": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/category"
+            }
+        },
+        "needInterface": {
+            "type": "boolean",
+            "default": false
+        },
+        "needLogging": {
+            "type": "boolean",
+            "default": "false"
+        },
+        "needResource": {
+            "type": "boolean",
+            "default": "false"
+        }
 
-  }
+    },
+    "required": ["name", "type", "categories", "needInterface", "needLogging", "needResource"]
+}

@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://magicsoftware.com/schemas/xpi/opt/project/step",
   "description" : "XPI step description",
   "type": "object",
@@ -16,18 +17,112 @@
       "type": "string"
     },
     "component": {
-      "$ref": "https://magicsoftware.com/schemas/xpi/opt/component"
+      "$ref": "https://magicsoftware.com/schemas/xpi/opt/component",
+      "description": "A name or a link of the component attached"
     },
+
+    "condition": {
+      "type": "string",
+      "description": ""
+    },
+    "procesingMode": {
+      "type": "string",
+      "enum": [
+        "Linear",
+        "Parallel",
+        "Standalone"
+      ]
+    },
+    "waitForCompletion": {
+      "type": "boolean",
+      "description": ""
+    },
+
+
     "callLogicFlow": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": ""
     },
     "savePoint": {
       "type": "boolean"
-    },
-    "resource": {
-      "$ref": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element"
     }
   },
-  "required" : ["stepId", "name", "component"]
+  "required" : ["stepId", "name", "component"],
+  "allOf": [
+    {
+      "if": {
+        "type":"object", "properties" :{"component": {"type":"object", "properties": {"needInterface" : {"const": true}}}}},
+      "then": {
+        "type": "object",
+        "properties" : {
+          "interface" : {
+            "type": "string",
+            "enum": [
+              "Method",
+              "XML"
+            ]
+          }
+        },
+        "required": ["interface"]
+      }
+    },      
+    {
+      "if": {
+        "type":"object", "properties" :{"component": {"type":"object", "properties": {"needLogging" : {"const": true}}}}},
+      "then": {
+        "type": "object",
+        "properties" : {
+          "loggingScope" : {
+            "type": "string",
+            "default": "No",
+            "enum": [
+              "No",
+              "Step",
+              "Method",
+              "Full"
+            ]
+          },
+          "stepLoggingOptions" : {
+            "type": "string",
+            "default": "Before",
+            "enum": [
+              "Before",
+              "After",
+              "Full"
+            ]
+          },
+          "message" : {
+            "type": "string"
+          },
+          "blob": {
+            "type": "string"
+          },
+          "fileExtension": {
+            "type": "string",
+            "default": "",
+            "enum": [
+              "TXT",
+              "XML",
+              "ZIP",
+              ""
+            ]
+          }
+        }}
+    },
+    {
+      "if": {
+        "type":"object", "properties" :{"component": {"type":"object", "properties": {"needResource" : {"const": true}}}}},
+      "then": {
+        "type": "object",
+        "properties" : {
+          "resource" : {
+            "$ref": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element"
+          }
+        },
+        "required": ["interface"]
+      }
 
+    }
+  ],
+  "unevaluatedProperties": false
 }

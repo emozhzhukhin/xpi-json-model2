@@ -19,7 +19,7 @@ function validateCallback(elem: (string | {data: string[]}), name: string) {
             //schema must contain a root json schema object for validating chain of related schemas
             const valid = ajv.validate(schema, data);
             if (!valid) console.log(ajv.errors);
-            else console.log(name +' validation successful');
+            else console.log(dataJson +' validated successfuly');
           
         });
     }
@@ -40,11 +40,16 @@ function loadSchemas() {
     schemaValidation['step-opt'].forEach(elem => {
         validateCallback(elem, 'step-opt');
     });
+    schemaValidation['components-opt'].forEach(elem => {
+        validateCallback(elem, 'components-opt');
+    });
 }
 
 function addSchema(schema: any) {
     try {
+        console.log(schema.$id + " loading...")
         ajv.addSchema(schema).compile(schema);
+        console.log(schema.$id + " loaded successfuly")
     } catch (e) {
         if(e instanceof Error) {
             if(e.message.indexOf('schema with key or id') > -1 && e.message.indexOf('already exists') > -1) {

@@ -1,0 +1,7 @@
+{
+    "stepId": "Salesforce1",
+    "name": "Salesforce",
+    "component": {"name": "Salesforce","type": "step and trigger", "categories": ["Connectors","Triggers"], "needInterface": true, "needLogging": true, "needResource": false},
+    "interface": "XML",
+    "loggingScope": "Full"
+}
