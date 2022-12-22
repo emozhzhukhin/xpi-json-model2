@@ -6,7 +6,7 @@
   "properties": {
     "stepId": {
       "type": "string",
-      "description": "step id is requiried as a step name is not unique"
+      "description": "Step id is requiried as a step name is not unique. In the old xpi studio a default step name is a component name."
     },
     "name": {
       "type": "string",
@@ -18,7 +18,7 @@
     },
     "component": {
       "$ref": "https://magicsoftware.com/schemas/xpi/opt/component",
-      "description": "A name or a link of the component attached"
+      "description": "A name and probably a description of a component name should be here"
     },
 
     "condition": {
@@ -27,6 +27,7 @@
     },
     "procesingMode": {
       "type": "string",
+      "description": "A linear step will run in its parent context while a non-linear step will run in a new thread.",
       "enum": [
         "Linear",
         "Parallel",
@@ -35,13 +36,13 @@
     },
     "waitForCompletion": {
       "type": "boolean",
-      "description": ""
+      "description": "In Wait for Completion mode, a linear step will wait until all the parallel steps on the same level are completed."
     },
 
 
     "callLogicFlow": {
       "type": "boolean",
-      "description": ""
+      "description": "Use this option if you want to call generic logic after the execution of a specific step."
     },
     "savePoint": {
       "type": "boolean"
@@ -119,7 +120,7 @@
             "$ref": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element"
           }
         },
-        "required": ["interface"]
+        "required": ["resource"]
       }
 
     }

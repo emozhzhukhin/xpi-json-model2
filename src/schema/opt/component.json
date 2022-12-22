@@ -48,14 +48,17 @@
         },
         "needInterface": {
             "type": "boolean",
+            "description": "Populates 'interface' property for a step ",
             "default": false
         },
         "needLogging": {
             "type": "boolean",
+            "description": "Populates logging set of properties for a step ",
             "default": "false"
         },
         "needResource": {
             "type": "boolean",
+            "description": "Populates resource's (service's) set of properties for a step/trigger ",
             "default": "false"
         }
 

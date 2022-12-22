@@ -22,49 +22,17 @@
         "description": "A name of a default resource"
       },
       
-      "resourceDefinitions": {
+      "resourceProperties": {
         "type": "array",
         "description": "",
         "items": {
-          "$ref": "/schemas/xpi/opt/resources/resource-definition"
+          "$ref": "/schemas/xpi/opt/resources/resource-property"
         }
       }
     },
-    "required": [ "name", "type", "default", "resourceDefinitions" ],
+    "required": [ "name", "type", "default", "resourceProperties" ],
 
     "$defs": {
-      "resourceDefinition": {
-        "$id": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-definition",
-        "description": "XPI resource definition",
-        "type": "object",
-
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "A name of the concrete resource",
-            "minLength": 1,
-            "maxLength": 30
-          },
-          "description": {
-            "type": "string",
-            "description": "A description of the resource specified"
-          },
-          "resourceProperties": {
-            "type": "array",
-            "description": "Array of properties for the resource",
-            "items" : {
-              "$ref": "/schemas/xpi/opt/resources/resource-property"
-            }
-          }
-
-        },
-        "required": [
-          "name",
-          "resourceProperties"
-        ]
-
-      },
-
       "resourceProperty": {
         "$id": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-property",
         "description": "XPI resource property description",
@@ -73,11 +41,11 @@
         "properties": {
           "name": {
             "type": "string",
-            "description": "A separate enum of all property names exists in the old xpi cloud. Do we need it?"
+            "description": "A separate enum of all property names exists in the old xpi studio. Do we need it?"
           },
           "type" : {
             "type": "string",
-            "description": "Xpi data types. Move to another JSON?",
+            "description": "xpi data types. Move to another JSON?",
             "enum": [
               "Alpha",
               "Blob",
@@ -89,7 +57,7 @@
           },
           "format": {
             "type": "string",
-            "description": "In most cases is a lenght"
+            "description": "In most cases it is a lenght of a type"
           },
           "value": {
             "type": "string",
@@ -97,7 +65,7 @@
           }
         },
         "required" : [
-          "name"
+          "name", "type", "format"
         ]
       }
     }
