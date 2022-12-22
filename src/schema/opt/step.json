@@ -54,61 +54,15 @@
       "if": {
         "type":"object", "properties" :{"component": {"type":"object", "properties": {"needInterface" : {"const": true}}}}},
       "then": {
-        "type": "object",
-        "properties" : {
-          "interface" : {
-            "type": "string",
-            "enum": [
-              "Method",
-              "XML"
-            ]
-          }
-        },
-        "required": ["interface"]
+        "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/common-properties#/$defs/interface"
       }
     },      
     {
       "if": {
         "type":"object", "properties" :{"component": {"type":"object", "properties": {"needLogging" : {"const": true}}}}},
       "then": {
-        "type": "object",
-        "properties" : {
-          "loggingScope" : {
-            "type": "string",
-            "default": "No",
-            "enum": [
-              "No",
-              "Step",
-              "Method",
-              "Full"
-            ]
-          },
-          "stepLoggingOptions" : {
-            "type": "string",
-            "default": "Before",
-            "enum": [
-              "Before",
-              "After",
-              "Full"
-            ]
-          },
-          "message" : {
-            "type": "string"
-          },
-          "blob": {
-            "type": "string"
-          },
-          "fileExtension": {
-            "type": "string",
-            "default": "",
-            "enum": [
-              "TXT",
-              "XML",
-              "ZIP",
-              ""
-            ]
-          }
-        }}
+        "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/common-properties#/$defs/logging" 
+      }
     },
     {
       "if": {

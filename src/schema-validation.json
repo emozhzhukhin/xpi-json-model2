@@ -32,6 +32,7 @@
   "step-opt": [
     "opt\\resource-element.json",
     "opt\\component.json",
+    "opt\\common-properties.json",
     "opt\\step.json",
     {
       "data": [
@@ -39,6 +40,15 @@
         "step-sm-data.json"
       ]
     }
+  ],
+  "trigger-opt": [
+    "opt\\trigger.json",
+    {
+      "data": [
+        "trigger-sf-data.json"
+      ]
+    }
+
   ],
   "components-opt": [
     "opt\\components.json",

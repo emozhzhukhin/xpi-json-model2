@@ -11,27 +11,44 @@
 
     "name": {
       "type": "string",
-      "description": "Trigger's name",
+      "description": "Trigger name",
       "minLength": 1,
       "maxLength": 30
     },
 
     "description": {
       "type": "string",
-      "description": "Trigger's description"
+      "description": "Trigger description"
     },
 
     "component": {
       "$ref": "https://magicsoftware.com/schemas/xpi/opt/component",
-      "description": "A name or a link of the component attached"
-    },
-
-    "service": {
-      "$ref": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element",
-      "description": "How to define here 2 fields (name and description) from resource-element???"
+      "description": "A name and probably a description of a component name should be here"
     }
 
   },
-  "required" : ["triggerId", "name", "component"]
-
+  "required" : ["triggerId", "name", "component"],
+  "allOf": [
+    {
+      "if": {
+        "type":"object", "properties" :{"component": {"type":"object", "properties": {"needLogging" : {"const": true}}}}},
+      "then": {
+        "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/common-properties#/$defs/logging" 
+      }
+    },
+    {
+      "if": {
+        "type":"object", "properties" :{"component": {"type":"object", "properties": {"needResource" : {"const": true}}}}},
+      "then": {
+        "type": "object",
+        "properties" : {
+          "service" : {
+            "$ref": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element"
+          }
+        },
+        "required": ["service"]
+      }
+    }
+  ],
+  "unevaluatedProperties": false
 }

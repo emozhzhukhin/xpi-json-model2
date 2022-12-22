@@ -23,7 +23,7 @@
             "type":"node",
             "request":"launch",
             "preLaunchTask": "tsc: build - tsconfig.json",
-            "program":"${workspaceFolder}/src/utils.ts",
+            "program":"${workspaceFolder}/src/index.ts",
             "stopOnEntry":false,
             "args":[],
             "cwd":"${workspaceFolder}/.",

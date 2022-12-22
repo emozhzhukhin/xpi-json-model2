@@ -1,0 +1,64 @@
+{
+    "$id": "https://magicsoftware.com/schemas/xpi/opt/project/flow",
+    "description" : "XPI flow description",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "A flow name"
+        },
+        "autoRepeat": {
+            "type": "boolean",
+            "default": false
+        },
+        "autoStart": {
+            "type": "boolean",
+            "default": false
+        },
+        "dbTransaction": {
+            "type": "boolean",
+            "default": true
+        },
+        "enable": {
+            "type": "boolean",
+            "default": true
+        },
+        "active": {
+            "type": "boolean",
+            "default": true
+        },
+        "maxInstances": {
+            "type": "integer",
+            "default": 0
+        },
+        "recoveryPolicy": {
+            "type": "string",
+            "default": "None",
+            "enum": [
+                "Abort",
+                "Restart",
+                "Save Point",
+                "None"
+            ]
+        },
+        "timeoutPolicy": {
+            "type": "string",
+            "default": "None",
+            "enum": [
+                "Abort",
+                "Restart",
+                "None"
+            ]
+        },
+        "timeoutValue": {
+            "type": "integer",
+            "default": 0
+        },
+        "comments": {
+            "type": "string"
+        }
+
+
+   }
+  
+}
