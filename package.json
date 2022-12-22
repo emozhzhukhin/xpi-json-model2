@@ -1,6 +1,6 @@
 {
   "name": "xpi-json-model",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "xpi json schemas and test data",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
