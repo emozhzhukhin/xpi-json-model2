@@ -1,7 +1,17 @@
 {
     "stepId": "Salesforce1",
     "name": "Salesforce",
-    "component": {"name": "Salesforce","type": "step and trigger", "categories": ["Connectors","Triggers"], "needInterface": true, "needLogging": true, "needResource": false},
+    "component": {"name": "Salesforce","type": "step and trigger", "categories": ["Connectors","Triggers"], "needInterface": true, "needLogging": true, "needResource": true},
     "interface": "XML",
-    "loggingScope": "Full"
+    "loggingScope": "Full",
+    "resource": {
+        "name": "Salesforce_1",
+        "type": "Salesforce",
+        "default": "Salesforce_1",
+        "resourceProperties" : [
+            {"name": "Endpoint URL", "type": "Alpha", "format": "260"},
+            {"name": "OAuth Refresh Token Status", "type": "Alpha", "format": "10"},
+            {"name": "Allow Field Trancation", "type": "Numeric", "format": "1"}
+        ]
+    }
 }
