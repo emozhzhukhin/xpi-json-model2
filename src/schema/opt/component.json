@@ -30,38 +30,53 @@
             ]
         }
     },
-    "properties": {
-        "name": {
-            "type": "string"
-        },
-        "description": {
-            "type": "string"
-        },
-        "type": {
-            "$ref": "#/$defs/stepOrTrigger"
-        },
-        "categories": {
-            "type": "array",
-            "items": {
-                "$ref": "#/$defs/category"
-            }
-        },
-        "needInterface": {
-            "type": "boolean",
-            "description": "Populates 'interface' property for a step ",
-            "default": false
-        },
-        "needLogging": {
-            "type": "boolean",
-            "description": "Populates logging set of properties for a step ",
-            "default": "false"
-        },
-        "needResource": {
-            "type": "boolean",
-            "description": "Populates resource's (service's) set of properties for a step/trigger ",
-            "default": "false"
-        }
+    "anyOf": [
+        {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/$defs/stepOrTrigger"
+                },
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/category"
+                    }
+                },
+                "needInterface": {
+                    "type": "boolean",
+                    "description": "Populates 'interface' property for a step ",
+                    "default": false
+                },
+                "needLogging": {
+                    "type": "boolean",
+                    "description": "Populates logging set of properties for a step ",
+                    "default": "false"
+                },
+                "needResource": {
+                    "type": "boolean",
+                    "description": "Populates resource's (service's) set of properties for a step/trigger ",
+                    "default": "false"
+                }
 
-    },
-    "required": ["name", "type", "categories", "needInterface", "needLogging", "needResource"]
+            },
+            "required": ["name", "type", "categories", "needInterface", "needLogging", "needResource"]
+        },
+        {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                }
+            },
+            "required": ["name"]            
+        }
+    ]
 }

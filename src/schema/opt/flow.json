@@ -5,7 +5,11 @@
     "properties": {
         "name": {
             "type": "string",
-            "description": "A flow name"
+            "description": "The flow's name"
+        },
+        "description": {
+            "type": "string",
+            "description": "Enter a description of the flow"
         },
         "autoRepeat": {
             "type": "boolean",
@@ -56,8 +60,26 @@
         },
         "comments": {
             "type": "string"
-        }
+        },
 
+        "steps": {
+            "type": "array",
+            "items" : {
+                "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/step"
+            }
+        },
+        "relations" : {
+            "type": "array",
+            "items": {
+                "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/relation"
+            }
+        },
+        "triggers": {
+            "type": "array",
+            "items": {
+                "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/trigger"
+            }
+        }
 
    }
   

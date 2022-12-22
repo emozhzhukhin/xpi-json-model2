@@ -1,0 +1,54 @@
+{
+    "name": "flow1",
+    "description": "my first flow",
+    "steps" : [
+        {
+            "stepId": "Salesforce1",
+            "name": "Salesforce",
+            "component": {"name": "Salesforce","type": "step and trigger", "categories": ["Connectors","Triggers"], "needInterface": true, "needLogging": true, "needResource": true},
+            "interface": "XML",
+            "loggingScope": "No",
+            "resource": {
+                "name": "Salesforce_1",
+                "type": "Salesforce",
+                "default": "Salesforce_1",
+                "resourceProperties" : [
+                    {"name": "Endpoint URL", "type": "Alpha", "format": "260"},
+                    {"name": "OAuth Refresh Token Status", "type": "Alpha", "format": "10"},
+                    {"name": "Allow Field Trancation", "type": "Numeric", "format": "1"}
+                ]
+            }
+        },
+        {
+            "stepId": "Save Message1",
+            "name": "Save message",
+            "component": {"name": "Save message","type": "step", "categories": ["Utilities"], "needInterface": false, "needLogging": false, "needResource": false}
+        }
+    ],
+    "relations" : [
+        {"name": "relation 1", "sourceStepId": "Salesforce1", "targetStepId": "Save Message1"}
+    ],
+    "triggers": [
+        {
+            "triggerId": "Salesforce1",
+            "name": "Salesforce",
+            "component": {"name": "Salesforce","type": "step and trigger", "categories": ["Connectors","Triggers"], "needInterface": false, "needLogging": true, "needResource": true},
+            "loggingScope": "Full",
+            "service": {
+                "name": "Salesforce_1",
+                "type": "Salesforce",
+                "default": "Salesforce_1",
+                "resourceProperties" : [
+                    {"name": "Endpoint URL", "type": "Alpha", "format": "260"},
+                    {"name": "OAuth Refresh Token Status", "type": "Alpha", "format": "10"},
+                    {"name": "Allow Field Trancation", "type": "Numeric", "format": "1"}
+                ]
+            }
+        },
+        {
+            "triggerId": "Scheduler1",
+            "name": "Scheduler",
+            "component": {"name": "Scheduler","type": "trigger", "categories": ["Triggers"], "needInterface": false, "needLogging": false, "needResource": false}
+        }        
+    ]
+}

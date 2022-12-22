@@ -45,8 +45,7 @@
           "service" : {
             "$ref": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element"
           }
-        },
-        "required": ["service"]
+        }
       }
     }
   ],

@@ -18,7 +18,10 @@ function validateCallback(elem: (string | {data: string[]}), name: string) {
             const data = JSON.parse(buffer.toString());
             //schema must contain a root json schema object for validating chain of related schemas
             const valid = ajv.validate(schema, data);
-            if (!valid) console.log(ajv.errors);
+            if (!valid) {
+              console.log(dataJson +' validating');
+              console.log(ajv.errors);
+            }
             else console.log(dataJson +' validated successfuly');
           
         });
@@ -45,6 +48,12 @@ function loadSchemas() {
     });
     schemaValidation['components-opt'].forEach(elem => {
         validateCallback(elem, 'components-opt');
+    });
+    schemaValidation['flow-opt'].forEach(elem => {
+      validateCallback(elem, 'flow-opt');
+    });
+    schemaValidation['flow-opt2'].forEach(elem => {
+      validateCallback(elem, 'flow-opt2');
     });
 }
 

@@ -57,6 +57,22 @@
         "components-opt-data.json"
       ]
     }
+  ],
+  "flow-opt" : [
+    "opt\\relation.json",
+    "opt\\flow.json",
+    {
+      "data": [
+        "flow-opt-data.json"
+      ]
+    }
+  ],
+  "flow-opt2" : [
+    {
+      "data": [
+        "flow-opt-data2.json"
+      ]
+    }
   ]
 
 }
