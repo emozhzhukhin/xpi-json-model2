@@ -1,95 +1,85 @@
 {
-    "$id": "https://magicsoftware.com/schemas/xpi/resources/resource-element",
-    "description": "XPI resource element",
-    "type": "object",
-
-    "properties": {
-      
-      "MainResourceId": {
-        "type": "number"
-      },
-      "MainResourceName": {
-        "type": "string",
-        "description": "In fact it is a resource type: Salesforce, SugarCrm, Database etc"
-      },
-      "DefaultResource": {
-        "type": "string",
-        "description": "It contains a name of a default resource of the type specified"
-      },
-      "MainResourceDefinitions": {
-        "type": "array",
-        "items": {
-          "$ref": "/schemas/xpi/resources/resource-definition"
+  "$id": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element",
+  "description": "XPI resource element",
+  "type": "object",
+  "anyOf": [
+    {
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "A name of a resource"
+        },
+        "description" : {
+          "type": "string",
+          "description": "Defines a resource description visible in UI"
+        },
+        "type": {
+          "type": "string",
+          "description": "It is a resource type: Salesforce, SugarCrm, Database etc"
+        },
+        "default" : {
+          "type": "string",
+          "description": "A name of a default resource"
+        },
+        "resourceProperties": {
+          "type": "array",
+          "description": "",
+          "items": {
+            "$ref": "/schemas/xpi/opt/resources/resource-property"
+          }
         }
-      }
-    },
-    "required": [ "MainResourceId", "MainResourceName", "DefaultResource", "MainResourceDefinitions" ],
-
-    "$defs": {
-      "ResourceDefinition": {
-        "$id": "https://magicsoftware.com/schemas/xpi/resources/resource-definition",
-        "description": "XPI resource definition",
-        "type": "object",
-
-        "properties": {
-          "ResourceTypeId": {
-            "type": "number",
-            "description": "the order number is a list of resources"
-          },
-          "ResourceTypeName": {
-            "type": "string",
-            "description": "A name of the concrete resource",
-            "minLength": 1,
-            "maxLength": 30
-          },
-          "ResourceTypeDescription": {
-            "type": "string",
-            "description": "A description of the resource specified"
-          },
-          "ResourceProperties": {
-            "type": "array",
-            "items" : {
-              "$ref": "/schemas/xpi/resources/resource-property"
-            }
-          }
-
-        },
-        "required": [
-          "ResourceTypeId",
-          "ResourceTypeName",
-          "ResourceProperties"
-        ]
-
       },
-
-      "ResourceProperty": {
-        "$id": "https://magicsoftware.com/schemas/xpi/resources/resource-property",
-        "description": "XPI resource property description",
-        "type": "object",
-
-        "properties": {
-          "Id": {
-            "type": "number",
-            "description": "A separate enum of all property ids is needed"
-          },
-          "Name": {
-            "type": "string",
-            "description": "A separate enum of all property names is needed"
-          },
-          "ExpressionValue": {
-            "type": "string",
-            "description": "A value of the corresponding property"
-          },
-          "DisplaySequenceID": {
-            "type": "number",
-            "description": "A sequence number of the property"
-          }
+      "required": [ "name", "type", "default", "resourceProperties" ]
+    },
+    {
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "A name of the resource/service"
         },
-        "required" : [
-          "Id",
-          "Name",
-          "DisplaySequenceID"
-        ]
-      }
+        "description" : {
+          "type": "string",
+          "description": "Defines a resource description visible in UI"
+        }
+      },
+      "required": [ "name"]
     }
+  ],
+  "$defs": {
+    "resourceProperty": {
+      "$id": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-property",
+      "description": "XPI resource property description",
+      "type": "object",
+
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "A separate enum of all property names exists in the old xpi studio. Do we need it?"
+        },
+        "type" : {
+          "type": "string",
+          "description": "xpi data types. Move to another JSON?",
+          "enum": [
+            "Alpha",
+            "Blob",
+            "Date",
+            "Logical",
+            "Numeric",
+            "Time"              
+          ]
+        },
+        "format": {
+          "type": "string",
+          "description": "In most cases it is a lenght of a type"
+        },
+        "value": {
+          "type": "string",
+          "description": "A value of the corresponding property"
+        }
+      },
+      "required" : [
+        "name", "type", "format"
+      ]
+    }
+  }
 }

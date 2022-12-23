@@ -1,57 +1,83 @@
 {
-  "$id": "https://magicsoftware.com/schemas/xpi/project/flow",
+  "$id": "https://magicsoftware.com/schemas/xpi/opt/project/flow",
   "description" : "XPI flow description",
   "type": "object",
   "properties": {
-    "Id": {
-      "type": "number"
-    },
-    "Name": {
+    "name": {
       "type": "string",
-      "minLength": 1,
-      "maxLength": 30
+      "description": "The flow's name"
     },
-    "Description": {
+    "description": {
+      "type": "string",
+      "description": "Enter a description of the flow"
+    },
+    "autoRepeat": {
+      "type": "boolean",
+      "default": false
+    },
+    "autoStart": {
+      "type": "boolean",
+      "default": false
+    },
+    "dbTransaction": {
+      "type": "boolean",
+      "default": true
+    },
+    "enable": {
+      "type": "boolean",
+      "default": true
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    },
+    "maxInstances": {
+      "type": "integer",
+      "default": 0
+    },
+    "recoveryPolicy": {
+      "type": "string",
+      "default": "None",
+      "enum": [
+        "Abort",
+        "Restart",
+        "Save Point",
+        "None"
+      ]
+    },
+    "timeoutPolicy": {
+      "type": "string",
+      "default": "None",
+      "enum": [
+        "Abort",
+        "Restart",
+        "None"
+      ]
+    },
+    "timeoutValue": {
+      "type": "integer",
+      "default": 0
+    },
+    "comments": {
       "type": "string"
     },
-    "Order": {
-      "type": "number"
-    },
-    "isInactive" : 
-    {
-      "type": "boolean"
-    },
-    "isDisabled" : {
-      "type": "boolean"
-    },
-    "isTwoPhase": {
-      "type": "boolean"
-    },
-    "isAutoStart": {
-      "type": "boolean"
-    },
-    "MaxInstances": {
-      "type": "number"
-    },
-    "isAutoRepeat": {
-      "type": "boolean"
-    },
-
-    "Steps" : {
-      "description" : "Steps defined for the flow",
-      "type" : "array",
-      "items": {
-          "$ref": "step"
+    "steps": {
+      "type": "array",
+      "items" : {
+        "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/step"
       }
     },
-    "Flow Variables": {
-      "description" : "The Flow Variables repository is a storage area that is used by the flow components to save and retrieve data items.",
-      "type" : "array",
+    "relations" : {
+      "type": "array",
       "items": {
-          "$ref": "https://magicsoftware.com/schemas/xpi/repositories/variable"
+        "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/relation"
+      }
+    },
+    "triggers": {
+      "type": "array",
+      "items": {
+        "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/trigger"
       }
     }
-    
-  },
-  "required" : ["Id", "Name"]
+  }
 }

@@ -8,13 +8,13 @@ let schema: object;
 function validateCallback(elem: string | { data: string[] }, name: string) {
   if (typeof elem === 'string') {
     const buffer = fs.readFileSync(path.resolve(__dirname, "schema\\" + elem));
-    //const buffer = fs.readFileSync("src\\schema\\" + elem);
+    // const buffer = fs.readFileSync("src\\schema\\" + elem);
     schema = JSON.parse(buffer.toString());
     addSchema(schema);
   } else if (typeof elem === 'object') {
     elem.data.forEach((dataJson) => {
       const buffer = fs.readFileSync(path.resolve(__dirname, "data\\" + dataJson));
-      //const buffer = fs.readFileSync("src\\data\\" + dataJson);
+      // const buffer = fs.readFileSync("src\\data\\" + dataJson);
       const data = JSON.parse(buffer.toString());
       // schema must contain a root json schema object for validating chain of related schemas
       const valid = ajv.validate(schema, data);
@@ -27,29 +27,17 @@ function validateCallback(elem: string | { data: string[] }, name: string) {
 }
 
 function loadSchemas() {
-  schemaValidation.resources.forEach((elem) => {
-    validateCallback(elem, 'resources');
+  schemaValidation['step'].forEach((elem) => {
+    validateCallback(elem, 'step');
   });
-  schemaValidation.services.forEach((elem) => {
-    validateCallback(elem, 'services');
+  schemaValidation['trigger'].forEach((elem) => {
+    validateCallback(elem, 'trigger');
   });
-  schemaValidation.project.forEach((elem) => {
-    validateCallback(elem, 'project');
+  schemaValidation['components'].forEach((elem) => {
+    validateCallback(elem, 'components');
   });
-  schemaValidation['step-opt'].forEach((elem) => {
-    validateCallback(elem, 'step-opt');
-  });
-  schemaValidation['trigger-opt'].forEach((elem) => {
-    validateCallback(elem, 'trigger-opt');
-  });
-  schemaValidation['components-opt'].forEach((elem) => {
-    validateCallback(elem, 'components-opt');
-  });
-  schemaValidation['flow-opt'].forEach((elem) => {
-    validateCallback(elem, 'flow-opt');
-  });
-  schemaValidation['flow-opt2'].forEach((elem) => {
-    validateCallback(elem, 'flow-opt2');
+  schemaValidation['flow'].forEach((elem) => {
+    validateCallback(elem, 'flow');
   });
 }
 

@@ -1,49 +1,81 @@
 {
-  "$id": "https://magicsoftware.com/schemas/xpi/project/step",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://magicsoftware.com/schemas/xpi/opt/project/step",
   "description" : "XPI step description",
   "type": "object",
   "properties": {
-    "Id": {
-      "type": "number"
+    "stepId": {
+      "type": "string",
+      "description": "Step id is requiried as a step name is not unique. In the old xpi studio a default step name is a component name."
     },
-    "Name": {
+    "name": {
       "type": "string",
       "minLength": 1,
       "maxLength": 30
     },
-    "Description": {
+    "description": {
       "type": "string"
     },
-    "SortOrder": {
-      "type": "number"
+    "component": {
+      "$ref": "https://magicsoftware.com/schemas/xpi/opt/component",
+      "description": "A name and probably a description of a component name should be here"
     },
-    "ParentStepID": {
-      "type": "number"
+
+    "condition": {
+      "type": "string",
+      "description": ""
     },
-    "IFCDefinition": {
-      "type": "number"
+    "procesingMode": {
+      "type": "string",
+      "description": "A linear step will run in its parent context while a non-linear step will run in a new thread.",
+      "enum": [
+        "Linear",
+        "Parallel",
+        "Standalone"
+      ]
     },
-    "ProcessMode": {
-      "type": "number"
+    "waitForCompletion": {
+      "type": "boolean",
+      "description": "In Wait for Completion mode, a linear step will wait until all the parallel steps on the same level are completed."
     },
-    "isGoTo": {
-      "type": "boolean"
+
+    "callLogicFlow": {
+      "type": "boolean",
+      "description": "Use this option if you want to call generic logic after the execution of a specific step."
     },
-    "isTwoPhase": {
-      "type": "boolean"
-    },
-    "isWait4Comp": {
-      "type": "boolean"
-    },
-    "isSavePoint": {
-      "type": "boolean"
-    },
-    "CallLogicFlow": {
-      "type": "boolean"
-    },
-    "isReturnXML": {
+    "savePoint": {
       "type": "boolean"
     }
   },
-  "required" : ["Id", "Name"]
+  "required" : ["stepId", "name", "component"],
+  "allOf": [
+    {
+      "if": {
+        "type":"object", "properties" :{"component": {"type":"object", "properties": {"needInterface" : {"const": true}}}}},
+      "then": {
+        "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/common-properties#/$defs/interface"
+      }
+    },      
+    {
+      "if": {
+        "type":"object", "properties" :{"component": {"type":"object", "properties": {"needLogging" : {"const": true}}}}},
+      "then": {
+        "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/common-properties#/$defs/logging" 
+      }
+    },
+    {
+      "if": {
+        "type":"object", "properties" :{"component": {"type":"object", "properties": {"needResource" : {"const": true}}}}},
+      "then": {
+        "type": "object",
+        "properties" : {
+          "resource" : {
+            "$ref": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element"
+          }
+        }
+      }
+
+    }
+  ],
+  "unevaluatedProperties": false
 }

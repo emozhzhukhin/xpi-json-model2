@@ -1,0 +1,8 @@
+{
+  "stepId": "Salesforce1",
+  "name": "Salesforce",
+  "component": {"name": "Salesforce"},
+  "interface": "XML",
+  "loggingScope": "Full",
+  "resource": {"name": "Salesforce_1"}
+}

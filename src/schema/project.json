@@ -1,30 +1,35 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://magicsoftware.com/schemas/xpi/project",
+  "$id": "https://magicsoftware.com/schemas/xpi/opt/project",
   "type": "object",
   "title": "XPI project JSON schema",
   "properties": {
-    "ProjectName": {
+    "name": {
       "type": "string",
       "description": "It is a name of XPI project",
       "maxLength": 50,
       "minLength": 1,
       "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
     },
-    "Owner": {
+
+    "owner": {
       "const": "Magic Software Enterprises Ltd"
     },
-    "Description": {
+
+    "description": {
       "type": "string"
     },
-    "Modified": {
+
+    
+    "modified": {
       "type": "string",
       "description": "Date and time of the last modification of the project"
     },
-    "Version": {
+    "version": {
       "type": "number"
     },
-    "ProjectDataEncoding": {
+
+    "projectDataEncoding": {
       "description": "project data encoding",
       "type": "string",
       "default": "West European",
@@ -51,20 +56,20 @@
           "West European"
       ]
     },
-    "Resources": {
+    "resources": {
       "type": "string",
       "description": "Resource settings file"
     },
-    "Services": {
+    "services": {
       "type": "string",
       "description": "Services settings file"
     },
-    "Calendars": {
+    "calendars": {
       "type": "string",
       "description": "Calendars settings file"
     },
 
-    "BusinessProcesses": {
+    "businessProcesses": {
       "description": "business processes defined for the project",
       "type": "array",
       "items": {
@@ -72,28 +77,28 @@
       }
     },
 
-    "ContextVariables": {
+    "contextVariables": {
       "description" : "Context variables are used to manage flow logic and transfer data between components for every flow in a project.",
       "type" : "array",
       "items": {
-          "$ref": "https://magicsoftware.com/schemas/xpi/repositories/variable"
+          "$ref": "https://magicsoftware.com/schemas/xpi/opt/repositories/variable"
       }
 
     },
 
-    "GlobalVariables": {
+    "globalVariables": {
       "description" : "Global variables are available to all flows in the same project that share the same memory address.",
       "type" : "array",
       "items": {
-          "$ref": "https://magicsoftware.com/schemas/xpi/repositories/variable"
+          "$ref": "https://magicsoftware.com/schemas/xpi/opt/repositories/variable"
       }
     },
 
-    "Errors" : {
+    "errors" : {
       "description" : "The Errors Repository contains a comprehensive list of errors that you can use to determine flow error policy.",
       "type" : "array",
       "items": {
-          "$ref": "https://magicsoftware.com/schemas/xpi/repositories/error"
+          "$ref": "https://magicsoftware.com/schemas/xpi/opt/repositories/error"
       }
 
     }
@@ -101,7 +106,7 @@
   },
 
   "required": [
-    "ProjectName",
-    "BusinessProcesses"
+    "name",
+    "businessProcesses"
   ]
 }

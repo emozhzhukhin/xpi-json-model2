@@ -1,76 +1,43 @@
 {
-  "resources": [
+  "step": [
     "resource-element.json",
-    "resources.json",
-    {
-      "data": [
-        "resources-data.json"
-      ]
-    }
-  ],
-  "services": [
-    "resource-element.json",
-    "services.json",
-    {
-      "data": [
-        "resources-data.json"
-      ]
-    }
-  ],
-  "project": [
-    "repositories.json",
+    "component.json",
+    "common-properties.json",
     "step.json",
-    "flow.json",
-    "business-process.json",
-    "project.json",
-    {
-      "data": [
-        "project-data.json"
-      ]
-    }
-  ],
-  "step-opt": [
-    "opt\\resource-element.json",
-    "opt\\component.json",
-    "opt\\common-properties.json",
-    "opt\\step.json",
     {
       "data": [
         "step-sf-data.json",
-        "step-sm-data.json"
+        "step-sf-data-short.json",
+        "step-sm-data.json",
+        "step-sm-data-short.json"
       ]
     }
   ],
-  "trigger-opt": [
-    "opt\\trigger.json",
+  "trigger": [
+    "trigger.json",
     {
       "data": [
-        "trigger-sf-data.json"
+        "trigger-sf-data.json",
+        "trigger-sf-data-short.json"
       ]
     }
 
   ],
-  "components-opt": [
-    "opt\\components.json",
+  "components": [
+    "components.json",
     {
       "data": [
-        "components-opt-data.json"
+        "components-data.json"
       ]
     }
   ],
-  "flow-opt" : [
-    "opt\\relation.json",
-    "opt\\flow.json",
+  "flow" : [
+    "relation.json",
+    "flow.json",
     {
       "data": [
-        "flow-opt-data.json"
-      ]
-    }
-  ],
-  "flow-opt2" : [
-    {
-      "data": [
-        "flow-opt-data2.json"
+        "flow-data.json",
+        "flow-data-short.json"
       ]
     }
   ]
