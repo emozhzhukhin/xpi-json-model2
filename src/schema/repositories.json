@@ -30,7 +30,7 @@
       },
       "required":  ["Name", "Type", "Length"]
     },
-
+    
     "ODS" : {
       "$id": "https://magicsoftware.com/schemas/xpi/repositories/ods",
       "description" : "An Operational Data Storage (ODS) system",

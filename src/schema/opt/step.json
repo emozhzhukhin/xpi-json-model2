@@ -39,7 +39,6 @@
       "description": "In Wait for Completion mode, a linear step will wait until all the parallel steps on the same level are completed."
     },
 
-
     "callLogicFlow": {
       "type": "boolean",
       "description": "Use this option if you want to call generic logic after the execution of a specific step."

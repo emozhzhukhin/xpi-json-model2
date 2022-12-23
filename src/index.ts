@@ -1,17 +1,20 @@
 import Ajv2020, { MissingRefError } from 'ajv/dist/2020.js';
 import schemaValidation from './schema-validation.json';
 import fs from 'fs';
+import path from 'path';
 let ajv: Ajv2020;
 let schema: object;
 
 function validateCallback(elem: string | { data: string[] }, name: string) {
   if (typeof elem === 'string') {
-    const buffer = fs.readFileSync('src\\schema\\' + elem);
+    const buffer = fs.readFileSync(path.resolve(__dirname, "schema\\" + elem));
+    //const buffer = fs.readFileSync("src\\schema\\" + elem);
     schema = JSON.parse(buffer.toString());
     addSchema(schema);
   } else if (typeof elem === 'object') {
     elem.data.forEach((dataJson) => {
-      const buffer = fs.readFileSync('src\\data\\' + dataJson);
+      const buffer = fs.readFileSync(path.resolve(__dirname, "data\\" + dataJson));
+      //const buffer = fs.readFileSync("src\\data\\" + dataJson);
       const data = JSON.parse(buffer.toString());
       // schema must contain a root json schema object for validating chain of related schemas
       const valid = ajv.validate(schema, data);

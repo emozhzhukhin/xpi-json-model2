@@ -22,7 +22,7 @@
             "name": "Debug index.ts directly",
             "type":"node",
             "request":"launch",
-            "preLaunchTask": "tsc: build - tsconfig.json",
+            "preLaunchTask": "npm: build",
             "program":"${workspaceFolder}/src/index.ts",
             "stopOnEntry":false,
             "args":[],

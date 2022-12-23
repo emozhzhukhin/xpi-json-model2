@@ -1,72 +1,69 @@
 {
-    "$id": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element",
-    "description": "XPI resource element",
-    "type": "object",
-
-    "properties": {
-
-      "name": {
-        "type": "string",
-        "description": "A name of a resource"
-      },
-      "description" : {
-        "type": "string",
-        "description": "Defines a resource description visible in UI"
-      },
-      "type": {
-        "type": "string",
-        "description": "It is a resource type: Salesforce, SugarCrm, Database etc"
-      },
-      "default" : {
-        "type": "string",
-        "description": "A name of a default resource"
-      },
-      
-      "resourceProperties": {
-        "type": "array",
-        "description": "",
-        "items": {
-          "$ref": "/schemas/xpi/opt/resources/resource-property"
-        }
-      }
+  "$id": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element",
+  "description": "XPI resource element",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "A name of a resource"
     },
-    "required": [ "name", "type", "default", "resourceProperties" ],
-
-    "$defs": {
-      "resourceProperty": {
-        "$id": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-property",
-        "description": "XPI resource property description",
-        "type": "object",
-
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "A separate enum of all property names exists in the old xpi studio. Do we need it?"
-          },
-          "type" : {
-            "type": "string",
-            "description": "xpi data types. Move to another JSON?",
-            "enum": [
-              "Alpha",
-              "Blob",
-              "Date",
-              "Logical",
-              "Numeric",
-              "Time"              
-            ]
-          },
-          "format": {
-            "type": "string",
-            "description": "In most cases it is a lenght of a type"
-          },
-          "value": {
-            "type": "string",
-            "description": "A value of the corresponding property"
-          }
-        },
-        "required" : [
-          "name", "type", "format"
-        ]
+    "description" : {
+      "type": "string",
+      "description": "Defines a resource description visible in UI"
+    },
+    "type": {
+      "type": "string",
+      "description": "It is a resource type: Salesforce, SugarCrm, Database etc"
+    },
+    "default" : {
+      "type": "string",
+      "description": "A name of a default resource"
+    },
+    "resourceProperties": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "$ref": "/schemas/xpi/opt/resources/resource-property"
       }
     }
+  },
+  "required": [ "name", "type", "default", "resourceProperties" ],
+
+  "$defs": {
+    "resourceProperty": {
+      "$id": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-property",
+      "description": "XPI resource property description",
+      "type": "object",
+
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "A separate enum of all property names exists in the old xpi studio. Do we need it?"
+        },
+        "type" : {
+          "type": "string",
+          "description": "xpi data types. Move to another JSON?",
+          "enum": [
+            "Alpha",
+            "Blob",
+            "Date",
+            "Logical",
+            "Numeric",
+            "Time"              
+          ]
+        },
+        "format": {
+          "type": "string",
+          "description": "In most cases it is a lenght of a type"
+        },
+        "value": {
+          "type": "string",
+          "description": "A value of the corresponding property"
+        }
+      },
+      "required" : [
+        "name", "type", "format"
+      ]
+    }
+  }
 }

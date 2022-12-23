@@ -6,7 +6,8 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsc",
+    "build": "tsc && npm run copy",
+    "copy": "xcopy /e /i /s /y \"src\\schema\\*\" \"lib\\schema\" && xcopy /e /i /s /y \"src\\data\\*\" \"lib\\data\"",
     "format": "prettier --write \"src/**/*.ts\" \"lib/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",

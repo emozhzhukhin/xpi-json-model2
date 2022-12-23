@@ -1,17 +1,16 @@
 {
-    "$id": "https://magicsoftware.com/schemas/xpi/opt/project/relation",
-    "description" : "XPI relation description.",
-    "type": "object",
-    "properties": {
-        "name": {
-            "type": "string"
-        },
-        "sourceStepId": {
-            "type": "string"
-        },
-        "targetStepId": {
-            "type": "string"
-        }
+  "$id": "https://magicsoftware.com/schemas/xpi/opt/project/relation",
+  "description" : "XPI relation description.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "sourceStepId": {
+      "type": "string"
+    },
+    "targetStepId": {
+      "type": "string"
     }
-  
+  }
 }

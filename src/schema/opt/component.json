@@ -1,82 +1,80 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://magicsoftware.com/schemas/xpi/opt/component",
-    "description" : "XPI components description",
-    "type": "object",
-    "$defs" : {
-        "stepOrTrigger" : {
-                "type": "string",
-                "description": "A component can be implemented either as a step or as a trigger or as both",
-                "enum": [
-                    "step",
-                    "trigger",
-                    "step and trigger"
-                ]
-
-        },
-        "category" : {
-            "type": "string",
-            "description": "Specifies the groups to which a component can belong",
-            "enum": [
-                "Utilities",
-                "Triggers",
-                "Converters",
-                "File Management",
-                "Connectors",
-                "Communication",
-                "Mail",
-                "Messaging",
-                "General"
-            ]
-        }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://magicsoftware.com/schemas/xpi/opt/component",
+  "description" : "XPI components description",
+  "type": "object",
+  "$defs" : {
+    "stepOrTrigger" : {
+      "type": "string",
+      "description": "A component can be implemented either as a step or as a trigger or as both",
+      "enum": [
+        "step",
+        "trigger",
+        "step and trigger"
+      ]
     },
-    "anyOf": [
-        {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                },
-                "type": {
-                    "$ref": "#/$defs/stepOrTrigger"
-                },
-                "categories": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/$defs/category"
-                    }
-                },
-                "needInterface": {
-                    "type": "boolean",
-                    "description": "Populates 'interface' property for a step ",
-                    "default": false
-                },
-                "needLogging": {
-                    "type": "boolean",
-                    "description": "Populates logging set of properties for a step ",
-                    "default": "false"
-                },
-                "needResource": {
-                    "type": "boolean",
-                    "description": "Populates resource's (service's) set of properties for a step/trigger ",
-                    "default": "false"
-                }
-
-            },
-            "required": ["name", "type", "categories", "needInterface", "needLogging", "needResource"]
+    "category" : {
+      "type": "string",
+      "description": "Specifies the groups to which a component can belong",
+      "enum": [
+        "Utilities",
+        "Triggers",
+        "Converters",
+        "File Management",
+        "Connectors",
+        "Communication",
+        "Mail",
+        "Messaging",
+        "General"
+      ]
+    }
+  },
+  "anyOf": [
+    {
+      "properties": {
+        "name": {
+          "type": "string"
         },
-        {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "description": {
-                    "type": "string"
-                }
-            },
-            "required": ["name"]            
+        "description": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/stepOrTrigger"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/category"
+          }
+        },
+        "needInterface": {
+          "type": "boolean",
+          "description": "Populates 'interface' property for a step ",
+          "default": false
+        },
+        "needLogging": {
+          "type": "boolean",
+          "description": "Populates logging set of properties for a step ",
+          "default": false
+        },
+        "needResource": {
+          "type": "boolean",
+          "description": "Populates resource's (service's) set of properties for a step/trigger ",
+          "default": false
         }
-    ]
+      },
+      "required": ["name", "type", "categories", "needInterface", "needLogging", "needResource"]
+    },
+    {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": ["name"]            
+    }
+  ]
 }
