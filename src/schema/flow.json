@@ -1,5 +1,5 @@
 {
-  "$id": "https://magicsoftware.com/schemas/xpi/opt/project/flow",
+  "$id": "https://magicsoftware.com/schemas/xpi/project/flow",
   "description" : "XPI flow description",
   "type": "object",
   "properties": {
@@ -64,19 +64,19 @@
     "steps": {
       "type": "array",
       "items" : {
-        "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/step"
+        "$ref": "https://magicsoftware.com/schemas/xpi/project/step"
       }
     },
     "relations" : {
       "type": "array",
       "items": {
-        "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/relation"
+        "$ref": "https://magicsoftware.com/schemas/xpi/project/relation"
       }
     },
     "triggers": {
       "type": "array",
       "items": {
-        "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/trigger"
+        "$ref": "https://magicsoftware.com/schemas/xpi/project/trigger"
       }
     }
   }

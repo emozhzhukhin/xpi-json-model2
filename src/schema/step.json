@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://magicsoftware.com/schemas/xpi/opt/project/step",
+  "$id": "https://magicsoftware.com/schemas/xpi/project/step",
   "description" : "XPI step description",
   "type": "object",
   "properties": {
@@ -17,7 +17,7 @@
       "type": "string"
     },
     "component": {
-      "$ref": "https://magicsoftware.com/schemas/xpi/opt/component",
+      "$ref": "https://magicsoftware.com/schemas/xpi/component",
       "description": "A name and probably a description of a component name should be here"
     },
 
@@ -53,14 +53,14 @@
       "if": {
         "type":"object", "properties" :{"component": {"type":"object", "properties": {"needInterface" : {"const": true}}}}},
       "then": {
-        "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/common-properties#/$defs/interface"
+        "$ref": "https://magicsoftware.com/schemas/xpi/common#/$defs/interface"
       }
     },      
     {
       "if": {
         "type":"object", "properties" :{"component": {"type":"object", "properties": {"needLogging" : {"const": true}}}}},
       "then": {
-        "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/common-properties#/$defs/logging" 
+        "$ref": "https://magicsoftware.com/schemas/xpi/common#/$defs/logging" 
       }
     },
     {
@@ -70,7 +70,7 @@
         "type": "object",
         "properties" : {
           "resource" : {
-            "$ref": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element"
+            "$ref": "https://magicsoftware.com/schemas/xpi/resources/resource-element"
           }
         }
       }

@@ -1,8 +1,8 @@
 {
   "step": [
+    "common.json",
     "resource-element.json",
     "component.json",
-    "common-properties.json",
     "step.json",
     {
       "data": [

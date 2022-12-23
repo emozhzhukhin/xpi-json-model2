@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://magicsoftware.com/schemas/xpi/opt/project",
+  "$id": "https://magicsoftware.com/schemas/xpi/project",
   "type": "object",
   "title": "XPI project JSON schema",
   "properties": {
@@ -25,6 +25,7 @@
       "type": "string",
       "description": "Date and time of the last modification of the project"
     },
+
     "version": {
       "type": "number"
     },
@@ -56,14 +57,17 @@
           "West European"
       ]
     },
+
     "resources": {
       "type": "string",
       "description": "Resource settings file"
     },
+
     "services": {
       "type": "string",
       "description": "Services settings file"
     },
+
     "calendars": {
       "type": "string",
       "description": "Calendars settings file"
@@ -81,7 +85,7 @@
       "description" : "Context variables are used to manage flow logic and transfer data between components for every flow in a project.",
       "type" : "array",
       "items": {
-          "$ref": "https://magicsoftware.com/schemas/xpi/opt/repositories/variable"
+          "$ref": "https://magicsoftware.com/schemas/xpi/repositories/variable"
       }
 
     },
@@ -90,7 +94,7 @@
       "description" : "Global variables are available to all flows in the same project that share the same memory address.",
       "type" : "array",
       "items": {
-          "$ref": "https://magicsoftware.com/schemas/xpi/opt/repositories/variable"
+          "$ref": "https://magicsoftware.com/schemas/xpi/repositories/variable"
       }
     },
 
@@ -98,7 +102,7 @@
       "description" : "The Errors Repository contains a comprehensive list of errors that you can use to determine flow error policy.",
       "type" : "array",
       "items": {
-          "$ref": "https://magicsoftware.com/schemas/xpi/opt/repositories/error"
+          "$ref": "https://magicsoftware.com/schemas/xpi/repositories/error"
       }
 
     }

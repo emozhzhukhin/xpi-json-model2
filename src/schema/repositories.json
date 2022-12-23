@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://magicsoftware.com/schemas/xpi/repositories",
+
+  "$defs": {
+    "variable" : {
+      "$id": "https://magicsoftware.com/schemas/xpi/repositories/variable",
+      "description" : "A common description of all types of variables in XPI project (BP, Flow, Context, Global)",
+      "type" : "object",
+      "properties": {
+        "name": {"type": "string"},
+        "description": {"type":"string"},
+        "type": {
+          "type": "string",
+          "enum": [
+            "Alpha",
+            "Blob",
+            "Date",
+            "Logical",
+            "Numeric",
+            "Time"
+          ]
+        },
+        "length": {"type": "number"},
+        "default": {
+          "description": "default value",
+          "type": "object"
+        }
+      },
+      "required":  ["name", "type", "length"]
+    },
+    "ods" : {
+      "$id": "https://magicsoftware.com/schemas/xpi/repositories/ods",
+      "description" : "An Operational Data Storage (ODS) system",
+      "type" : "object",
+      "properties": {
+        "id": {"type": "number"},
+        "guid": {"type": "string"},
+        "name": {"type": "string"},
+        "description": {"type":"string"},
+        "scope": {
+          "type": "string",
+          "enum": [
+            "Global",
+            "Local"
+          ]
+        }
+      },
+      "required":  ["name", "scope"]
+    },
+    "errorComponents": {
+      "$id": "https://magicsoftware.com/schemas/xpi/repositories/error-component",
+      "type": "string",
+      "description": "The list of all error componets",
+      "enum" : [
+        "Data Mapper",
+        "Flow Data",
+        "Java Class Connector",
+        "EJB Connector",
+        "Refresh Conversions",
+        "Web Services",
+        ".NET Utility",
+        "User Error",
+        "Directory Scanner",
+        "Domino",
+        "Email",
+        "File Management",
+        "FTP",
+        "HTTP",
+        "IBM i",
+        "ItemField Connector",
+        "JMS",
+        "WebSphere MQ",
+        "MSMQ",
+        "File Archive",
+        "Encryption",
+        "File Splitter",
+        "SAPB1 2004",
+        "XSLT",
+        "SAPB1 2005",
+        "Microsoft Word",
+        "Microsoft Excel",
+        "SAPB1 2007",
+        "Salesforce",
+        "Notes DB",
+        "JD Edwards",
+        "Validation",
+        "HL7",
+        "Google Calendar",
+        "LDAP",
+        "SAP A1",
+        "Google Drive",
+        "XML Handling",
+        "Dynamics CRM",
+        "Exchange",
+        "TCPListener",
+        "SharePoint",
+        "SAPB1 8.8",
+        "General",
+        "Sugar"
+      ]
+    },
+    "error" : {
+      "$id": "https://magicsoftware.com/schemas/xpi/repositories/error",
+      "description": "represents an error item ",
+      "type": "object",
+      "properties": 
+      {
+        "id": {"type": "number"},
+        "guid": {"type": "string"},
+        "description": {"type":"string"},
+        "errorComponent": {"$ref": "/schemas/xpi/repositories/error-component"}
+      },
+      "required": ["errorComponent"]
+     }
+  }
+}

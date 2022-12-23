@@ -1,5 +1,5 @@
 {
-  "$id": "https://magicsoftware.com/schemas/xpi/opt/project/trigger",
+  "$id": "https://magicsoftware.com/schemas/xpi/project/trigger",
   "description" : "XPI trigger description",
   "type": "object",
 
@@ -22,7 +22,7 @@
     },
 
     "component": {
-      "$ref": "https://magicsoftware.com/schemas/xpi/opt/component",
+      "$ref": "https://magicsoftware.com/schemas/xpi/component",
       "description": "A name and probably a description of a component name should be here"
     }
 
@@ -33,7 +33,7 @@
       "if": {
         "type":"object", "properties" :{"component": {"type":"object", "properties": {"needLogging" : {"const": true}}}}},
       "then": {
-        "$ref": "https://magicsoftware.com/schemas/xpi/opt/project/common-properties#/$defs/logging" 
+        "$ref": "https://magicsoftware.com/schemas/xpi/common#/$defs/logging" 
       }
     },
     {
@@ -43,7 +43,7 @@
         "type": "object",
         "properties" : {
           "service" : {
-            "$ref": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element"
+            "$ref": "https://magicsoftware.com/schemas/xpi/resources/resource-element"
           }
         }
       }

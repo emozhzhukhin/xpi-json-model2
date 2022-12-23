@@ -1,7 +1,5 @@
 {
-  // I want my default to be 2
   "editor.tabSize": 2,
-  // This one forces the tab to be **space**
   "editor.insertSpaces": true,
   "editor.detectIndentation": false
 }

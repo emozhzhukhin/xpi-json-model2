@@ -1,5 +1,5 @@
 {
-  "$id": "https://magicsoftware.com/schemas/xpi/opt/project/relation",
+  "$id": "https://magicsoftware.com/schemas/xpi/project/relation",
   "description" : "XPI relation description.",
   "type": "object",
   "properties": {

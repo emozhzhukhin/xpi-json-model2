@@ -1,5 +1,5 @@
 {
-  "$id": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-element",
+  "$id": "https://magicsoftware.com/schemas/xpi/resources/resource-element",
   "description": "XPI resource element",
   "type": "object",
   "anyOf": [
@@ -25,7 +25,7 @@
           "type": "array",
           "description": "",
           "items": {
-            "$ref": "/schemas/xpi/opt/resources/resource-property"
+            "$ref": "/schemas/xpi/resources/resource-property"
           }
         }
       },
@@ -47,7 +47,7 @@
   ],
   "$defs": {
     "resourceProperty": {
-      "$id": "https://magicsoftware.com/schemas/xpi/opt/resources/resource-property",
+      "$id": "https://magicsoftware.com/schemas/xpi/resources/resource-property",
       "description": "XPI resource property description",
       "type": "object",
 
@@ -57,16 +57,7 @@
           "description": "A separate enum of all property names exists in the old xpi studio. Do we need it?"
         },
         "type" : {
-          "type": "string",
-          "description": "xpi data types. Move to another JSON?",
-          "enum": [
-            "Alpha",
-            "Blob",
-            "Date",
-            "Logical",
-            "Numeric",
-            "Time"              
-          ]
+          "$ref": "https://magicsoftware.com/schemas/xpi/common#/$defs/xpitypes"
         },
         "format": {
           "type": "string",
