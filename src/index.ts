@@ -7,14 +7,12 @@ let schema: object;
 
 function validateCallback(elem: string | { data: string[] }, name: string) {
   if (typeof elem === 'string') {
-    const buffer = fs.readFileSync(path.resolve(__dirname, "schema\\" + elem));
-    // const buffer = fs.readFileSync("src\\schema\\" + elem);
+    const buffer = fs.readFileSync(path.resolve(__dirname, 'schema\\' + elem));
     schema = JSON.parse(buffer.toString());
     addSchema(schema);
   } else if (typeof elem === 'object') {
     elem.data.forEach((dataJson) => {
-      const buffer = fs.readFileSync(path.resolve(__dirname, "data\\" + dataJson));
-      // const buffer = fs.readFileSync("src\\data\\" + dataJson);
+      const buffer = fs.readFileSync(path.resolve(__dirname, 'data\\' + dataJson));
       const data = JSON.parse(buffer.toString());
       // schema must contain a root json schema object for validating chain of related schemas
       const valid = ajv.validate(schema, data);
@@ -27,16 +25,16 @@ function validateCallback(elem: string | { data: string[] }, name: string) {
 }
 
 function loadSchemas() {
-  schemaValidation['step'].forEach((elem) => {
+  schemaValidation.step.forEach((elem) => {
     validateCallback(elem, 'step');
   });
-  schemaValidation['trigger'].forEach((elem) => {
+  schemaValidation.trigger.forEach((elem) => {
     validateCallback(elem, 'trigger');
   });
-  schemaValidation['components'].forEach((elem) => {
+  schemaValidation.components.forEach((elem) => {
     validateCallback(elem, 'components');
   });
-  schemaValidation['flow'].forEach((elem) => {
+  schemaValidation.flow.forEach((elem) => {
     validateCallback(elem, 'flow');
   });
 }
