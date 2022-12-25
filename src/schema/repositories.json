@@ -26,10 +26,12 @@
       "description" : "An Operational Data Storage (ODS) system",
       "type" : "object",
       "properties": {
-        "id": {"type": "number"},
-        "guid": {"type": "string"},
-        "name": {"type": "string"},
-        "description": {"type":"string"},
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type":"string"
+        },
         "scope": {
           "type": "string",
           "enum": [
@@ -96,14 +98,108 @@
       "$id": "https://magicsoftware.com/schemas/xpi/repositories/error",
       "description": "represents an error item ",
       "type": "object",
-      "properties": 
-      {
-        "id": {"type": "number"},
-        "guid": {"type": "string"},
+      "properties": {
+        "code": {"type": "string"},
         "description": {"type":"string"},
         "errorComponent": {"$ref": "/schemas/xpi/repositories/error-component"}
       },
-      "required": ["errorComponent"]
-     }
+      "required": ["code", "description", "errorComponent"]
+    },
+    "dataConverter" : {
+      "$id": "https://magicsoftware.com/schemas/xpi/repositories/data-converter",
+      "description": "Represents a data converter item",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "dynamic": {
+          "type": "boolean",
+          "default": "false",
+          "description": "if it is set to true, file name prop should be hidden"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "delimiter": {
+          "type": "string",
+          "default": "'"
+        },
+        "description" : {
+          "type": "string"
+        }
+      },
+      "required": ["name", "fileName", "delimiter"]  
+    },
+    "defaultDataFormat": {
+      "$id": "https://magicsoftware.com/schemas/xpi/repositories/default-data-format",
+      "description": "A predefined data type used for xml and json data types",
+      "type": "object",
+      "properties": {
+        "dataType": {
+          "type": "string",
+          "description": "a name of a data type"
+        },
+        "attribute": {
+          "$ref": "https://magicsoftware.com/schemas/xpi/common#/$defs/xpitypes"
+        },
+        "format": {
+          "type": "string"
+        }
+      }
+    },
+    "pssTopic": {
+      "$id": "https://magicsoftware.com/schemas/xpi/repositories/pss-topic",
+      "description": "An event that can be published or subscribed",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      },
+      "required": ["name"]
+    },
+    "udsFiled": {
+      "$id": "https://magicsoftware.com/schemas/xpi/repositories/uds-field",
+      "description": "A User Defined Storage filed definition",
+      "type": "object",
+      "properties": {
+        "name" : {
+          "type": "string"
+        },
+        "type" : {
+          "$ref": "https://magicsoftware.com/schemas/xpi/common#/$defs/xpitypes"
+        },
+        "lenght": {
+          "type": "string",
+          "description": "It allows date and time formats: HH:MM:SS"
+        },
+        "defaultValue": {
+          "type": "string"
+        }
+      }
+    },
+    "uds": {
+      "$id": "https://magicsoftware.com/schemas/xpi/repositories/uds",
+      "description": " User Defined Storage (UDS) lets you define multi-dimensional storage tables (arrays).",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "fields" : {
+          "type": "array",
+          "items" : {
+            "$ref": "https://magicsoftware.com/schemas/xpi/repositories/uds-field"
+          }
+        }
+      }
+    }
   }
 }

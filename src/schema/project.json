@@ -90,6 +90,13 @@
       "items": {
           "$ref": "https://magicsoftware.com/schemas/xpi/repositories/error"
       }
+    },
+    "odsEntries": {
+      "description" : "The ODS Repository contains a list of ods entries. An ods entry is the same as a user key.",
+      "type" : "array",
+      "items": {
+          "$ref": "https://magicsoftware.com/schemas/xpi/repositories/ods"
+      }
     }
   },
   "required": [
