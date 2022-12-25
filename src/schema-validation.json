@@ -40,6 +40,23 @@
         "flow-data-short.json"
       ]
     }
+  ],
+  "bp": [
+    "repositories.json",
+    "business-process.json",
+    {
+      "data": [
+        "bp-data-mixed.json"
+      ]
+    }
+  ],
+  "project" : [
+    "project.json",
+    {
+      "data": [
+        "project-data-short.json"
+      ]
+    }
   ]
 
 }
