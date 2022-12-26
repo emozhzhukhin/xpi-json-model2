@@ -1,0 +1,16 @@
+[
+  {
+    "name": "U.UDS1", 
+    "fields": [
+      {"name": "Field1", "type": "Alpha", "length": "30"},
+      {"name": "Field2", "type": "Alpha", "length": "30"}
+    ]
+  },
+  {
+    "name": "U.UDS2",
+    "fields": [
+      {"name": "Field1", "type": "Alpha", "length": "30"},
+      {"name": "Field2", "type": "Time", "length": "HH:MM:SS"}
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "$id": "https://magicsoftware.com/schemas/xpi/repositories/context-variables",
+  "description" : "XPI context variables description",
+
+  "type": "array",
+  "items" : {
+    "$ref": "https://magicsoftware.com/schemas/xpi/repositories/variable"
+  }
+}

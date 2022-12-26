@@ -24,6 +24,19 @@ function validateCallback(elem: string | { data: string[] }, name: string) {
   }
 }
 
+function validatePairsCallback(elem: {schema: string, data: string}) {
+  let buffer = fs.readFileSync(path.resolve(__dirname, 'schema\\' + elem.schema));
+  const schema = JSON.parse(buffer.toString());
+  addSchema(schema);
+  buffer = fs.readFileSync(path.resolve(__dirname, 'data\\' + elem.data));
+  const data = JSON.parse(buffer.toString());
+  const valid = ajv.validate(schema, data);
+  if (!valid) {
+    console.log(elem.data + ' validating');
+    console.log(ajv.errors);
+  } else console.log(elem.data + ' validated successfuly');
+}
+
 function loadSchemas() {
   schemaValidation.step.forEach((elem) => {
     validateCallback(elem, 'step');
@@ -43,6 +56,10 @@ function loadSchemas() {
   schemaValidation.project.forEach((elem) => {
     validateCallback(elem, 'project');
   });
+  schemaValidation.repositories.forEach((elem) => {
+    validatePairsCallback(elem);
+  });
+
 }
 
 function addSchema(sch: any) {

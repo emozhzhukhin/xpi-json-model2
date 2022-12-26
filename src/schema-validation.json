@@ -57,6 +57,14 @@
         "project-data-short.json"
       ]
     }
+  ],
+  "repositories": [
+    {"schema":"repositories\\global-variables.json","data":"repositories\\global-variables-data.json"},
+    {"schema":"repositories\\context-variables.json","data":"repositories\\context-variables-data.json"},
+    {"schema":"repositories\\ods-entries.json","data":"repositories\\ods-entries-data.json"},
+    {"schema":"repositories\\uds-entries.json","data":"repositories\\uds-entries-data.json"},
+    {"schema":"repositories\\pss-topics.json","data":"repositories\\pss-topics-data.json"},
+    {"schema":"repositories\\default-data-formats.json", "data": "repositories\\default-data-formats-data.json"}
   ]
 
 }

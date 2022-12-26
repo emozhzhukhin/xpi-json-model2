@@ -81,21 +81,35 @@
       "description" : "Global variables are available to all flows in the same project that share the same memory address.",
       "type" : "array",
       "items": {
-          "$ref": "https://magicsoftware.com/schemas/xpi/repositories/variable"
+        "$ref": "https://magicsoftware.com/schemas/xpi/repositories/variable"
       }
     },
     "errors" : {
       "description" : "The Errors Repository contains a comprehensive list of errors that you can use to determine flow error policy.",
       "type" : "array",
       "items": {
-          "$ref": "https://magicsoftware.com/schemas/xpi/repositories/error"
+        "$ref": "https://magicsoftware.com/schemas/xpi/repositories/error"
       }
     },
     "odsEntries": {
       "description" : "The ODS Repository contains a list of ods entries. An ods entry is the same as a user key.",
       "type" : "array",
       "items": {
-          "$ref": "https://magicsoftware.com/schemas/xpi/repositories/ods"
+        "$ref": "https://magicsoftware.com/schemas/xpi/repositories/ods"
+      }
+    },
+    "pssTopics": {
+      "description": "Published and subscribed events",
+      "type": "array",
+      "items": {
+        "$ref": "https://magicsoftware.com/schemas/xpi/repositories/pss-topic"
+      }
+    },
+    "udsEntries": {
+      "description": "User Defined Storage (UDS) lets you define multi-dimensional storage tables (arrays)",
+      "type": "array",
+      "items": {
+        "$ref": "https://magicsoftware.com/schemas/xpi/repositories/uds"
       }
     }
   },

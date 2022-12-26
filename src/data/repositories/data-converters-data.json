@@ -1,0 +1,4 @@
+[
+  {"name": "V.ConvertTable1", "dynamic": true},
+  {"name": "V.ConvertTable2", "dynamic": false, "fileName": "file.ext", "delimiter": ","}
+]

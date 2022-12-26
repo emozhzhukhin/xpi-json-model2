@@ -1,0 +1,9 @@
+{
+  "$id": "https://magicsoftware.com/schemas/xpi/repositories/global-variables",
+  "description" : "XPI global variables description",
+
+  "type": "array",
+  "items" : {
+    "$ref": "https://magicsoftware.com/schemas/xpi/repositories/variable"
+  }
+}

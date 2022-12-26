@@ -13,13 +13,15 @@
         "type": {
           "$ref": "https://magicsoftware.com/schemas/xpi/common#/$defs/xpitypes"
         },
-        "length": {"type": "number"},
-        "default": {
+        "length": {
+          "type": "string"
+        },
+        "defaultValue": {
           "description": "default value",
-          "type": "object"
+          "type": "string"
         }
       },
-      "required":  ["name", "type", "length"]
+      "required":  ["name", "type"]
     },
     "ods" : {
       "$id": "https://magicsoftware.com/schemas/xpi/repositories/ods",
@@ -129,7 +131,7 @@
           "type": "string"
         }
       },
-      "required": ["name", "fileName", "delimiter"]  
+      "required": ["name", "dynamic"]  
     },
     "defaultDataFormat": {
       "$id": "https://magicsoftware.com/schemas/xpi/repositories/default-data-format",
@@ -146,7 +148,8 @@
         "format": {
           "type": "string"
         }
-      }
+      },
+      "required": ["dataType", "attribute"]
     },
     "pssTopic": {
       "$id": "https://magicsoftware.com/schemas/xpi/repositories/pss-topic",
@@ -184,7 +187,7 @@
     },
     "uds": {
       "$id": "https://magicsoftware.com/schemas/xpi/repositories/uds",
-      "description": " User Defined Storage (UDS) lets you define multi-dimensional storage tables (arrays).",
+      "description": "User Defined Storage (UDS) lets you define multi-dimensional storage tables (arrays)",
       "type": "object",
       "properties": {
         "name": {
@@ -199,7 +202,8 @@
             "$ref": "https://magicsoftware.com/schemas/xpi/repositories/uds-field"
           }
         }
-      }
+      },
+      "required": ["name", "fields"]
     }
   }
 }
