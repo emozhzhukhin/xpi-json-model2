@@ -1,7 +1,7 @@
 [
-  {"name": "Salesforce","type": "step and trigger", "categories": ["Connectors","Triggers"], "needInterface": true, "needLogging": true, "needResource": false},
+  {"name": "Salesforce","type": "step and trigger", "categories": ["Connectors","Triggers"], "needInterface": true, "needLogging": true, "needResource": true},
   {"name": "Save Message","type": "step", "categories": ["Utilities"], "needInterface": false, "needLogging": false, "needResource": false},
   {"name": "NOP", "type": "step", "categories": ["Utilities"], "needInterface": false, "needLogging": false, "needResource": false},
-  {"name": "Scheduler","type": "trigger", "categories": ["Utilities"], "needInterface": false, "needLogging": false, "needResource": false},
+  {"name": "Scheduler","type": "trigger", "categories": ["Utilities"], "needInterface": false, "needLogging": false, "needResource": true},
   {"name": "Directory Scanner","type": "step and trigger", "categories": ["Triggers", "File Management"], "needInterface": true, "needLogging": true, "needResource": true}
 ]

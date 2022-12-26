@@ -22,7 +22,7 @@
       "description": "Date and time of the last modification of the project"
     },
     "version": {
-      "type": "number"
+      "type": "string"
     },
     "projectDataEncoding": {
       "description": "project data encoding",
@@ -52,12 +52,10 @@
       ]
     },
     "resources": {
-      "type": "string",
-      "description": "Resource settings file"
+      "$ref": "https://magicsoftware.com/schemas/xpi/resources"
     },
     "services": {
-      "type": "string",
-      "description": "Services settings file"
+      "$ref": "https://magicsoftware.com/schemas/xpi/services"
     },
     "calendars": {
       "type": "string",

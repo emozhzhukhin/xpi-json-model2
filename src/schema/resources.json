@@ -1,0 +1,9 @@
+{
+  "$id": "https://magicsoftware.com/schemas/xpi/resources",
+  "description" : "XPI resources settings",
+
+  "type": "array",
+  "items" : {
+    "$ref": "https://magicsoftware.com/schemas/xpi/resources/resource-element"
+  }
+}

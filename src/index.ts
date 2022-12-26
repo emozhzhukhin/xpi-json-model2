@@ -53,13 +53,15 @@ function loadSchemas() {
   schemaValidation.bp.forEach((elem) => {
     validateCallback(elem, 'bp');
   });
-  schemaValidation.project.forEach((elem) => {
-    validateCallback(elem, 'project');
-  });
   schemaValidation.repositories.forEach((elem) => {
     validatePairsCallback(elem);
   });
-
+  schemaValidation.resourcesandservices.forEach((elem) => {
+    validatePairsCallback(elem);
+  });
+  schemaValidation.project.forEach((elem) => {
+    validateCallback(elem, 'project');
+  });
 }
 
 function addSchema(sch: any) {
