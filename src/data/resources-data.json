@@ -10,16 +10,13 @@
     ]
   },
   {
-    "name": "Database_1", 
-    "type": "Database", 
-    "default": "Database",
-    "resourceProperties": [
-      {"name": "DBMS", "type": "Alpha", "format": "30", "value": "MS SQL Server"},
-      {"name": "Database name", "type": "Alpha", "format": "30", "value": "MS SQL Server"},
-      {"name": "Server", "type": "Alpha", "format": "30", "value": "XPI-SQL-SERVER"},
-      {"name": "User", "type": "Alpha", "format": "100", "value": "sa"},
-      {"name": "password", "type": "Alpha", "format": "30", "value": "******"},
-      {"name": "Starting Owner", "type": "Alpha", "format": "30", "value": "dbo"}
+    "name": "Salesforce_2",
+    "type": "Salesforce", 
+    "default": "Salesforce_1",
+    "resourceProperties" : [
+      {"name": "Endpoint URL", "type": "Alpha", "format": "260", "value":"https://login.salesforce.com"},
+      {"name": "OAuth Refresh Token Status", "type": "Alpha", "format": "10", "value": "Available"},
+      {"name": "Allow Field Trancation", "type": "Numeric", "format": "1", "value": "Yes"}
     ]
   }
 ]

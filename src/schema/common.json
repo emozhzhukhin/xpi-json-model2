@@ -1,5 +1,5 @@
 {
-  "$id": "https://magicsoftware.com/schemas/xpi/common",
+  "$id": "common.json",
   "type": "object",
   "$defs" : {
     "logging" : {  

@@ -1,9 +1,0 @@
-{
-  "$id": "https://magicsoftware.com/schemas/xpi/repositories/uds-entries",
-  "description" : "XPI UDS description",
-
-  "type": "array",
-  "items" : {
-    "$ref": "https://magicsoftware.com/schemas/xpi/repositories/uds"
-  }
-}

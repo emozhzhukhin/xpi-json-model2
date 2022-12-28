@@ -1,13 +1,9 @@
 {
-  "$id": "https://magicsoftware.com/schemas/xpi/project/trigger",
+  "$id": "trigger.json",
   "description" : "XPI trigger description",
   "type": "object",
 
   "properties": {
-    "triggerId": {
-      "type": "string",
-      "description": "trigger id is requiried as a trigger name is not unique"
-    },
 
     "name": {
       "type": "string",
@@ -21,29 +17,29 @@
       "description": "Trigger description"
     },
 
-    "component": {
-      "$ref": "https://magicsoftware.com/schemas/xpi/component",
+    "type": {
+      "$ref": "component.json",
       "description": "A name and probably a description of a component name should be here"
     }
 
   },
-  "required" : ["triggerId", "name", "component"],
+  "required" : ["name", "type"],
   "allOf": [
     {
       "if": {
-        "type":"object", "properties" :{"component": {"type":"object", "properties": {"needLogging" : {"const": true}}}}},
+        "type":"object", "properties" :{"type": {"type":"object", "properties": {"needLogging" : {"const": true}}}}},
       "then": {
-        "$ref": "https://magicsoftware.com/schemas/xpi/common#/$defs/logging" 
+        "$ref": "common.json#/$defs/logging" 
       }
     },
     {
       "if": {
-        "type":"object", "properties" :{"component": {"type":"object", "properties": {"needResource" : {"const": true}}}}},
+        "type":"object", "properties" :{"type": {"type":"object", "properties": {"needResource" : {"const": true}}}}},
       "then": {
         "type": "object",
         "properties" : {
           "service" : {
-            "$ref": "https://magicsoftware.com/schemas/xpi/resources/resource-element"
+            "$ref": "resource-element.json"
           }
         }
       }

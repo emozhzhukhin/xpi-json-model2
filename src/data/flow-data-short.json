@@ -1,36 +1,28 @@
 {
   "name": "flow1",
   "description": "my first flow",
+  "triggers": [
+    {
+      "name": "Salesforce",
+      "type": {"name": "Salesforce"},
+      "loggingScope": "Full",
+      "service": {"name": "Salesforce_1"}
+    }
+  ],
   "steps" : [
     {
-      "stepId": "Salesforce1",
       "name": "Salesforce",
-      "component": {"name": "Salesforce"},
+      "type": {"name": "Salesforce"},
       "interface": "XML",
       "loggingScope": "No",
       "resource": {"name": "Salesforce_1"}
     },
     {
-      "stepId": "Save Message1",
-      "name": "Save message",
-      "component": {"name": "Save message"}
+      "name": "Save message1",
+      "type": {"name": "Save message"}
     }
   ],
   "relations" : [
-    {"name": "relation 1", "sourceStepId": "Salesforce1", "targetStepId": "Save Message1"}
-  ],
-  "triggers": [
-    {
-      "triggerId": "Salesforce1",
-      "name": "Salesforce",
-      "component": {"name": "Salesforce"},
-      "loggingScope": "Full",
-      "service": {"name": "Salesforce_1"}
-    },
-    {
-      "triggerId": "Scheduler1",
-      "name": "Scheduler",
-      "component": {"name": "Scheduler"}
-    }        
+    {"name": "relation 1", "source": "Salesforce1", "target": "Save Message1"}
   ]
 }

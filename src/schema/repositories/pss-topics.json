@@ -1,9 +1,0 @@
-{
-  "$id": "https://magicsoftware.com/schemas/xpi/repositories/pss-topics",
-  "description" : "XPI pss topics description",
-
-  "type": "array",
-  "items" : {
-    "$ref": "https://magicsoftware.com/schemas/xpi/repositories/pss-topic"
-  }
-}

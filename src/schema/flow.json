@@ -1,5 +1,6 @@
 {
-  "$id": "https://magicsoftware.com/schemas/xpi/project/flow",
+  "$schema": "flow.json",
+  "$id": "flow.json",
   "description" : "XPI flow description",
   "type": "object",
   "properties": {
@@ -61,23 +62,24 @@
     "comments": {
       "type": "string"
     },
+    "triggers": {
+      "type": "array",
+      "items": {
+        "$ref": "trigger.json"
+      }
+    },
     "steps": {
       "type": "array",
       "items" : {
-        "$ref": "https://magicsoftware.com/schemas/xpi/project/step"
+        "$ref": "step.json"
       }
     },
     "relations" : {
       "type": "array",
       "items": {
-        "$ref": "https://magicsoftware.com/schemas/xpi/project/relation"
+        "$ref": "relation.json"
       }
     },
-    "triggers": {
-      "type": "array",
-      "items": {
-        "$ref": "https://magicsoftware.com/schemas/xpi/project/trigger"
-      }
-    }
+    "additionalProperties": false
   }
 }

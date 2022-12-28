@@ -1,15 +1,15 @@
 {
-  "$id": "https://magicsoftware.com/schemas/xpi/project/relation",
+  "$id": "relation.json",
   "description" : "XPI relation description.",
   "type": "object",
   "properties": {
     "name": {
       "type": "string"
     },
-    "sourceStepId": {
+    "source": {
       "type": "string"
     },
-    "targetStepId": {
+    "target": {
       "type": "string"
     }
   }

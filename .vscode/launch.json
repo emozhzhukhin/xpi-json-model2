@@ -5,19 +5,6 @@
     "version": "0.2.0",
     "configurations": 
     [
-
-        {
-            "name": "Debug Jest Tests",
-            "type": "node",
-            "request": "launch",
-            //"preLaunchTask": "tsc: build - tsconfig.json",
-            "runtimeArgs": ["--inspect-brk", "${workspaceRoot}/node_modules/jest/bin/jest.js", "--runInBand", "--coverage", "false"],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "outFiles": [
-                "${workspaceFolder}/lib/**/*.js"
-            ]
-        },
         {
             "name": "Debug index.ts directly",
             "type":"node",

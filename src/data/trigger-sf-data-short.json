@@ -1,7 +1,6 @@
 {
-  "triggerId": "Salesforce1",
-  "name": "Salesforce",
-  "component": {"name": "Salesforce"},
+  "name": "Salesforce1",
+  "type": {"name": "Salesforce"},
   "loggingScope": "Full",
   "service": {"name": "Salesforce_1"}
 }

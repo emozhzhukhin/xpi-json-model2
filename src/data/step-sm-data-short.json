@@ -1,7 +1,6 @@
 
 {
-  "stepId": "Save Message",
-  "name": "Save message",
-  "component": {"name": "Save message"}
+  "name": "Save message1",
+  "type": {"name": "Save message"}
 }
 

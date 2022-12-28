@@ -1,13 +1,8 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://magicsoftware.com/schemas/xpi/project/step",
+  "$id": "step.json",
   "description" : "XPI step description",
   "type": "object",
   "properties": {
-    "stepId": {
-      "type": "string",
-      "description": "Step id is requiried as a step name is not unique. In the old xpi studio a default step name is a component name."
-    },
     "name": {
       "type": "string",
       "minLength": 1,
@@ -16,8 +11,8 @@
     "description": {
       "type": "string"
     },
-    "component": {
-      "$ref": "https://magicsoftware.com/schemas/xpi/component",
+    "type": {
+      "$ref": "component.json",
       "description": "A name and probably a description of a component name should be here"
     },
 
@@ -47,20 +42,20 @@
       "type": "boolean"
     }
   },
-  "required" : ["stepId", "name", "component"],
+  "required" : ["name", "type"],
   "allOf": [
     {
       "if": {
-        "type":"object", "properties" :{"component": {"type":"object", "properties": {"needInterface" : {"const": true}}}}},
+        "type":"object", "properties" :{"type": {"type":"object", "properties": {"needInterface" : {"const": true}}}}},
       "then": {
-        "$ref": "https://magicsoftware.com/schemas/xpi/common#/$defs/interface"
+        "$ref": "common.json#/$defs/interface"
       }
     },      
     {
       "if": {
-        "type":"object", "properties" :{"component": {"type":"object", "properties": {"needLogging" : {"const": true}}}}},
+        "type":"object", "properties" :{"type": {"type":"object", "properties": {"needLogging" : {"const": true}}}}},
       "then": {
-        "$ref": "https://magicsoftware.com/schemas/xpi/common#/$defs/logging" 
+        "$ref": "common.json#/$defs/logging" 
       }
     },
     {
@@ -70,7 +65,7 @@
         "type": "object",
         "properties" : {
           "resource" : {
-            "$ref": "https://magicsoftware.com/schemas/xpi/resources/resource-element"
+            "$ref": "resource-element.json"
           }
         }
       }

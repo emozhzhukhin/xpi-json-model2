@@ -1,9 +1,10 @@
 {
-  "$id": "https://magicsoftware.com/schemas/xpi/services",
+  "$schema": "flow.json",
+  "$id": "services.json",
   "description" : "XPI services settings",
 
   "type": "array",
   "items" : {
-    "$ref": "https://magicsoftware.com/schemas/xpi/resources/resource-element"
+    "$ref": "resource-element.json"
   }
 }

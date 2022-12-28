@@ -1,9 +1,9 @@
 {
-  "$id": "https://magicsoftware.com/schemas/xpi/components",
+  "$id": "components.json",
   "description" : "XPI components description",
 
   "type": "array",
   "items" : {
-    "$ref": "https://magicsoftware.com/schemas/xpi/component"
+    "$ref": "component.json"
   }
 }

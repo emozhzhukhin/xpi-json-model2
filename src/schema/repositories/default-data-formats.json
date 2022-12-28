@@ -1,9 +1,0 @@
-{
-  "$id": "https://magicsoftware.com/schemas/xpi/repositories/default-data-formats",
-  "description" : "XPI default data formats description",
-
-  "type": "array",
-  "items" : {
-    "$ref": "https://magicsoftware.com/schemas/xpi/repositories/default-data-format"
-  }
-}

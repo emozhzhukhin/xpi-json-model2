@@ -1,5 +1,15 @@
 {
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
-  "editor.detectIndentation": false
+  "editor.detectIndentation": false,
+  "json.schemas": [
+    {
+      "fileMatch": ["/src/schema/address/*"],
+      "url": "./src/schema/address.schema.json"
+    },
+    {
+      "fileMatch": ["/src/data/*"],
+      "url": "./src/schema/flow.json"
+    }
+  ]
 }

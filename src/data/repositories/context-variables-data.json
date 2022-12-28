@@ -1,4 +1,0 @@
-[
-  {"name": "C.UserBlob","description": "Passes undefined types of information between components in flow", "type": "Blob"},
-  {"name": "C.sys.ContextLogging","description": "Handles the control of the components flow context logging process", "type": "Logical", "length": "1", "defaultValue": "'TRUE'LOG"}
-]

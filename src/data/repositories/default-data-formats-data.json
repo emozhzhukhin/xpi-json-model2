@@ -1,5 +1,0 @@
-[
-  {"dataType": "ENTITIES", "attribute": "Alpha", "format": "1000"},
-  {"dataType": "date", "attribute": "Date", "format": "YYYY-MM-DD"},
-  {"dataType": "base64Binary", "attribute": "Blob"}
-]

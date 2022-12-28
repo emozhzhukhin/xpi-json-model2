@@ -1,7 +1,6 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://magicsoftware.com/schemas/xpi/component",
-  "description" : "XPI components description",
+  "$id": "component.json",
+  "description" : "XPI component description",
   "type": "object",
   "$defs" : {
     "stepOrTrigger" : {
