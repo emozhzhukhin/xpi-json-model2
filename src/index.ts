@@ -69,6 +69,8 @@ function addSchema(sch: any) {
     console.log(sch.$id + ' loading...');
     ajv.addSchema(sch).compile(sch);
     console.log(sch.$id + ' loaded successfuly');
+    const sch2 = ajv.getSchema("https://magicsoftware.com/schemas/xpi/project/step");
+    console.log(sch2?.schema);
   } catch (e) {
     if (e instanceof Error) {
       if (e.message.indexOf('schema with key or id') > -1 && e.message.indexOf('already exists') > -1) {
