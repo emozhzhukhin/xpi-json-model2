@@ -1,5 +1,5 @@
 {
-  "$schema": "flow.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "flow.json",
   "description" : "XPI flow description",
   "type": "object",
@@ -64,22 +64,26 @@
     },
     "triggers": {
       "type": "array",
+      "description": "A list of triggers attached",
       "items": {
         "$ref": "trigger.json"
       }
     },
     "steps": {
       "type": "array",
+      "description": "A list of steps attached",
       "items" : {
         "$ref": "step.json"
       }
     },
     "relations" : {
       "type": "array",
+      "description": "A list of relations between steps attached",
       "items": {
         "$ref": "relation.json"
       }
-    },
-    "additionalProperties": false
-  }
+    }
+  },
+  "required": ["name"],
+  "additionalProperties": false
 }

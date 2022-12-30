@@ -1,0 +1,50 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+name: Types in Yaml
+definitions:
+  component:
+    type: object
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+      type:
+        type: string
+        enum: [step, step and trigger, trigger]
+    required: 
+      - "name"
+      - "type"
+  components:
+    type: array
+    items:
+      $ref: "#/definitions/component"
+  resource:
+    type: object
+    properties:
+      name:
+        type: string
+      description:
+        type: string
+      type:
+        $ref: "#/definitions/component"
+      value:
+        type: string
+    required: 
+      - "name"
+      - "type"
+  resources:
+    type: array
+    items:
+      $ref: "#/definitions/resources"
+      
+type: object
+description: "project"
+properties:
+  name:
+    type: string
+  description:
+    type: string
+  resources: 
+    $ref: "#/definitions/resources"
+  components:
+    $ref: "#/definitions/components"

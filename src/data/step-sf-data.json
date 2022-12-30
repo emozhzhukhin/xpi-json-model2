@@ -1,6 +1,7 @@
 {
   "name": "Salesforce1",
-  "type": {"name": "Salesforce"},
+  "description": "sf1 step",
+  "type": {"name": "Salesforce", "description": "sf"},
   "interface": "XML",
   "loggingScope": "Full",
   "resource": {"name": "Salesforce_1"}

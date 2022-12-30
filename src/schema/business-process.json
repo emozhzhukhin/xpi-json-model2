@@ -1,0 +1,25 @@
+{
+  "$id": "business-process.json",
+  "description": "XPI business process description",
+  "type": "object",
+
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 30
+    },
+    "description": {
+      "type": "string"
+    },
+    "flows" : {
+      "description" : "flows defined for the Business Process",
+      "type" : "array",
+      "items": {
+          "$ref": "flow.json"
+      }
+    }
+  },
+  "required" : ["name", "flows"],
+  "additionalProperties": false
+}

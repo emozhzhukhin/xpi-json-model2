@@ -65,7 +65,7 @@
         "type": "object",
         "properties" : {
           "resource" : {
-            "$ref": "resource-element.json"
+            "$ref": "resource-element.json#"
           }
         }
       }

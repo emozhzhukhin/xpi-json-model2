@@ -1,6 +1,7 @@
 {
   "name": "Salesforce1",
-  "type": {"name": "Salesforce"},
+  "description": "sf1 trigger",
+  "type": {"name": "Salesforce", "description": "sf"},
   "loggingScope": "Full",
   "service": {"name": "Salesforce_1"}
 }

@@ -1,0 +1,31 @@
+name: proj1
+resources:
+  - 
+    name: sf1
+    type: Salesforce
+    value: reference to an array of props
+  - 
+    name: suga1
+    type: Sugar
+    value: reference to an array of props
+services:
+  - 
+    name: sf1
+    type: Salesforce
+    value: reference to an array of props
+
+flow:
+  name: flow1
+  description: my first yaml's flow
+  steps:
+    - 
+      name: sf step1
+      type: Salesforce
+      resource:
+        name: sf1
+        type: Salesforce
+description: proj description    
+      
+
+    
+      

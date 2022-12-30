@@ -1,0 +1,7 @@
+
+{
+  "name": "Save message1",
+  "description": "sm1 step",
+  "type": {"name": "Save message", "description": "sm"}
+}
+

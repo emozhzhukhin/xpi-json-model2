@@ -6,8 +6,8 @@
     "step.json",
     {
       "data": [
-        "step-sf-data-short.json",
-        "step-sm-data-short.json"
+        "step-sf-data.json",
+        "step-sm-data.json"
       ]
     }
   ],
@@ -15,7 +15,7 @@
     "trigger.json",
     {
       "data": [
-        "trigger-sf-data-short.json"
+        "trigger-sf-data.json"
       ]
     }
 
@@ -33,12 +33,21 @@
     "flow.json",
     {
       "data": [
-        "flow-data-short.json"
+        "flow-data.json"
       ]
     }
   ],
   "resourcesandservices": [
     {"schema":"resources.json","data":"resources-data.json"},
     {"schema":"services.json","data":"services-data.json"}
+  ],
+  "project": [
+    "business-process.json",
+    "project.json",
+    {
+      "data": [
+        "project-data.json"
+      ]
+    }
   ]
 }

@@ -14,7 +14,7 @@
     },
     "category" : {
       "type": "string",
-      "description": "Specifies the groups to which a component can belong",
+      "description": "Specifies the groups to which a component can belong to",
       "enum": [
         "Utilities",
         "Triggers",
@@ -62,7 +62,8 @@
           "default": false
         }
       },
-      "required": ["name", "type", "categories", "needInterface", "needLogging", "needResource"]
+      "required": ["name", "type", "categories", "needInterface", "needLogging", "needResource"],
+      "additionalProperties": false
     },
     {
       "properties": {
@@ -73,7 +74,8 @@
           "type": "string"
         }
       },
-      "required": ["name"]            
+      "required": ["name"],
+      "additionalProperties": false
     }
   ]
 }

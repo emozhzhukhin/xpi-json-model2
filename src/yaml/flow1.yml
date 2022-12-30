@@ -1,0 +1,21 @@
+
+#Flow
+name: "flow1"
+description: "description1"
+steps:
+  - name: SF1
+    description: first step
+    intereface: 
+    resource: 
+      
+    type: 
+      
+                  
+triggers:
+  - name: SFtr1
+    description: first trigger
+    type: Salesforce
+    
+
+
+  

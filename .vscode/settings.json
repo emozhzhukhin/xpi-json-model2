@@ -2,14 +2,22 @@
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
+
+
   "json.schemas": [
     {
       "fileMatch": ["/src/schema/address/*"],
       "url": "./src/schema/address.schema.json"
-    },
-    {
-      "fileMatch": ["/src/data/*"],
-      "url": "./src/schema/flow.json"
     }
-  ]
+  ],
+
+  "yaml.schemas": {
+    "./src/schema/components.json": ["/src/yaml/c*"],
+    "./src/schema/flow.json": ["/src/yaml/f*"],
+    "./src/schema/project.json": ["/src/yaml/p*"],
+    "./src/schema/jproject.json": ["/src/yaml/jp*"],
+    "./src/schema/project.yml": ["/src/yaml/yp*"],
+  },
+  "redhat.telemetry.enabled": false,
+
 }

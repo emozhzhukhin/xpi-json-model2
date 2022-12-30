@@ -3,23 +3,26 @@
   "description": "my first flow",
   "triggers": [
     {
-      "name": "Salesforce",
-      "type": {"name": "Salesforce"},
+      "name": "SalesforceT1",
+      "description": "sf1 trigger",
+      "type": {"name": "Salesforce", "description": "sf"},
       "loggingScope": "Full",
       "service": {"name": "Salesforce_1"}
     }
   ],
   "steps" : [
     {
-      "name": "Salesforce",
-      "type": {"name": "Salesforce"},
+      "name": "Salesforce1",
+      "description": "sf1 step",
+      "type": {"name": "Salesforce", "description": "sf"},
       "interface": "XML",
       "loggingScope": "No",
       "resource": {"name": "Salesforce_1"}
     },
     {
       "name": "Save message1",
-      "type": {"name": "Save message"}
+      "description": "sm1 step",
+      "type": {"name": "Save message", "description": "sm"}
     }
   ],
   "relations" : [

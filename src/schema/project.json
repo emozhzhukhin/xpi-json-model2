@@ -1,0 +1,72 @@
+{
+  "$id": "project.json",
+  "type": "object",
+  "title": "XPI project JSON schema",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "It is a name of XPI project",
+      "maxLength": 50,
+      "minLength": 1,
+      "pattern": "^[A-Za-z][A-Za-z0-9_]*$"
+    },
+    "owner": {
+      "const": "Magic Software Enterprises Ltd"
+    },
+    "description": {
+      "type": "string"
+    },
+    "modified": {
+      "type": "string",
+      "description": "Date and time of the last modification of the project"
+    },
+    "version": {
+      "type": "string"
+    },
+    "projectDataEncoding": {
+      "description": "project data encoding",
+      "type": "string",
+      "default": "West European",
+      "enum": [
+        "Arabic",
+        "Central & East European",
+        "Chinese (GB2312)",
+        "Cyrillic (ISO)",
+        "Cyrillic (Windows)",
+        "Greek",
+        "Hebrew",
+        "Japanese (EUC-JP)",
+        "Japanese (ISO-2022-JP)",
+        "Japanese (Shift-JIS)",
+        "Korean (EUC-KR)",
+        "North European",
+        "South European",
+        "Taiwanese (Big5)",
+        "Thai",
+        "Turkish",
+        "Unicode (UTF16)",
+        "Unicode (UTF8)",
+        "US-ASCII",
+        "West European"
+      ]
+    },
+    "resources": {
+      "$ref": "resources.json"
+    },
+    "services": {
+      "$ref": "services.json"
+    },
+    "components" : {
+      "$ref": "components.json"
+    },
+    "businessProcesses": {
+      "description": "business processes defined for the project",
+      "type": "array",
+      "items": {
+        "$ref": "business-process.json"
+      }
+    }
+  },
+  "required": ["name", "businessProcesses"],
+  "additionalProperties": false
+}

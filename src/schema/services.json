@@ -1,5 +1,4 @@
 {
-  "$schema": "flow.json",
   "$id": "services.json",
   "description" : "XPI services settings",
 

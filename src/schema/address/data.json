@@ -1,4 +1,8 @@
 {
-  "": ""
-
+  "locality": 7,
+  "region": "ru",
+  "country-name": "Russia",
+  "zz": "1",
+  "post-office-box": "aa",
+  "street-address": 1
 }

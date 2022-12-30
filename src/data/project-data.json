@@ -1,0 +1,78 @@
+{
+  "name": "Project2",
+  "description": "my second project",
+  "version": "0.1",
+  "projectDataEncoding": "Unicode (UTF8)",
+  
+  "resources" : [
+    {
+      "name": "Salesforce_1",
+      "type": "Salesforce", 
+      "default": "Salesforce_1",
+      "resourceProperties" : [
+        {"name": "Endpoint URL", "type": "Alpha", "format": "260", "value":"https://login.salesforce.com"},
+        {"name": "OAuth Refresh Token Status", "type": "Alpha", "format": "10", "value": "Available"},
+        {"name": "Allow Field Trancation", "type": "Numeric", "format": "1", "value": "Yes"}
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "Salesforce_1",
+      "type": "Salesforce", 
+      "default": "Salesforce_1",
+      "resourceProperties" : [
+        {"name": "Endpoint URL", "type": "Alpha", "format": "260", "value":"https://login.salesforce.com"},
+        {"name": "OAuth Refresh Token Status", "type": "Alpha", "format": "10", "value": "Available"},
+        {"name": "Allow Field Trancation", "type": "Numeric", "format": "1", "value": "Yes"}
+      ]
+    },
+    {
+      "name": "Scheduler_1", 
+      "type": "Scheduler",
+      "default": "Scheduler_1",
+      "resourceProperties" : [
+        {"name": "Scheduler Data", "type": "Alpha", "format": "3000", "value":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxTY2hlZHVsZXIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSI+DQogIDx0cmlnZ2VyX3R5cGU+RDwvdHJpZ2dlcl90eXBlPg0KICA8VGltZUluRGF5PjAwOjAwPC9UaW1lSW5EYXk+DQogIDxJbnRlcnZhbD4xPC9JbnRlcnZhbD4NCiAgPFN0YXJ0X0RhdGU+MjAvMTIvMjAyMjwvU3RhcnRfRGF0ZT4NCiAgPEVuZERhdGU+MDAvMDAvMDAwMDwvRW5kRGF0ZT4NCiAgPFN0YXJ0VGltZT4wMDowMDowMDwvU3RhcnRUaW1lPg0KICA8RW5kVGltZT4wMDowMDowMDwvRW5kVGltZT4NCiAgPE9wZXJhdGlvbj4wPC9PcGVyYXRpb24+DQogIDxJbnRlcnZhbENhbGN1bGF0ZVNjaGVkUlQ+dHJ1ZTwvSW50ZXJ2YWxDYWxjdWxhdGVTY2hlZFJUPg0KICA8SW50ZXJ2YWxNaW51dGVzQWZ0ZXJUaGVIb3VyPjA8L0ludGVydmFsTWludXRlc0FmdGVyVGhlSG91cj4NCiAgPENhbGVuZGFyRXhjbHVzaW9uSWQ+MjE0NzQ4MzY0NzwvQ2FsZW5kYXJFeGNsdXNpb25JZD4NCiAgPENhbGVuZGFyRXhjbHVzaW9uc0xpc3Q+DQogICAgPENvbWJvSXRlbT4NCiAgICAgIDxEaXNwbGF5VmFsdWU+Tm9uZTwvRGlzcGxheVZhbHVlPg0KICAgICAgPFNlbGVjdGVkVmFsdWUgeHNpOnR5cGU9InhzZDppbnQiPjIxNDc0ODM2NDc8L1NlbGVjdGVkVmFsdWU+DQogICAgICA8SW5kZXg+MDwvSW5kZXg+DQogICAgICA8SXNDaGVja2VkPmZhbHNlPC9Jc0NoZWNrZWQ+DQogICAgPC9Db21ib0l0ZW0+DQogICAgPENvbWJvSXRlbT4NCiAgICAgIDxEaXNwbGF5VmFsdWU+Q2FsZW5kYXJfMTwvRGlzcGxheVZhbHVlPg0KICAgICAgPFNlbGVjdGVkVmFsdWUgeHNpOnR5cGU9InhzZDppbnQiPjE8L1NlbGVjdGVkVmFsdWU+DQogICAgICA8SW5kZXg+MDwvSW5kZXg+DQogICAgICA8SXNDaGVja2VkPmZhbHNlPC9Jc0NoZWNrZWQ+DQogICAgPC9Db21ib0l0ZW0+DQogIDwvQ2FsZW5kYXJFeGNsdXNpb25zTGlzdD4NCjwvU2NoZWR1bGVyPg=="}
+      ]
+    }
+  ],
+  "businessProcesses": [
+    {
+      "name": "BP1",
+      "flows": [
+        {
+          "name": "flow1",
+          "description": "my first flow",
+          "steps" : [
+            {
+              "name": "Salesforce1",
+              "type": {"name": "Salesforce"},
+              "interface": "XML",
+              "loggingScope": "No",
+              "resource": {"name": "Salesforce_1"}
+            },
+            {
+              "name": "Save message1",
+              "type": {"name": "Save message"}
+            }
+          ],
+          "relations" : [
+            {"name": "relation 1", "source": "Salesforce1", "target": "Save Message1"}
+          ],
+          "triggers": [
+            {
+              "name": "SalesforceT1",
+              "type": {"name": "Salesforce"},
+              "loggingScope": "Full",
+              "service": {"name": "Salesforce_1"}
+            },
+            {
+              "name": "Scheduler1",
+              "type": {"name": "Scheduler"}
+            }        
+          ]
+        }
+      ]
+    }
+  ]
+}

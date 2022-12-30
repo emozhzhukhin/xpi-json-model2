@@ -1,0 +1,37 @@
+
+name: proj1
+components:
+  - name: Salesforce
+    type: step and trigger
+    categories:
+      - Connectors
+      - Triggers
+    needInterface: true
+    needLogging: true
+    needResource: true
+  - name: Save Message
+    type: step
+    categories:
+      - Utilities
+    needInterface: false
+    needLogging: false
+    needResource: false
+
+resources:
+  - name: Salesforce_1
+    type: Salesforce
+  - 
+
+
+businessProcesses:
+  - name: bp1
+    flows:
+      - name: flow2
+        steps:
+          - name: sf1
+            type: 
+            resource:  
+              
+              
+
+

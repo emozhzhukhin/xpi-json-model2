@@ -1,0 +1,17 @@
+- name: Salesforce
+  description: sf
+  
+- name: Save Message
+  description: df
+  
+- name: Sugar
+  description: su
+  needInterface: true
+  needLogging: true
+  needResource: true
+  categories: 
+  - Connectors
+  - Triggers
+  type: trigger
+
+    
