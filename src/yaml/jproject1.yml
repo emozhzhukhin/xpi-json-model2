@@ -19,11 +19,22 @@ flow:
   description: my first yaml's flow
   steps:
     - 
-      name: sf step1
+      name: save1
+      type: Save Message 
+    - 
+      name: sf2
       type: Salesforce
-      resource:
-        name: sf1
-        type: Salesforce
+      resource: Salesforce_2
+    -
+      name: sugar1
+      type: Save Message
+            
+      
+      
+      
+      
+      
+
 description: proj description    
       
 

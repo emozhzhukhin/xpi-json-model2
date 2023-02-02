@@ -1,0 +1,11 @@
+name: yamlProject1
+flow:
+  name: flow1
+  description: description
+  autoStart: true
+  steps:
+    - name: sm1
+      type: Save Message
+      configuration: sm1 config
+
+      

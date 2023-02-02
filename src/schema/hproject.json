@@ -104,18 +104,32 @@
         "steps" : {
           "description": "Steps description is here",
           "title": "Please define a root step and a list of child steps",
-          "type": "object",
-          "properties": {
-            "root": {
-              "$ref": "#/definitions/step"
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "steps": {
+                  "type":"array",
+                  "items": {
+                    "$ref": "#/definitions/step"
+                  }
+                },
+                "parallel": {
+                  "type":"array",
+                  "items": {
+                    "$ref": "#/definitions/step"
+                  }
+                }
+
+              }
             },
-            "steps": {
+            {
               "type":"array",
               "items": {
                 "$ref": "#/definitions/step"
               }
             }
-          }
+          ]
         },
         "triggers" : {
           "description": "Defines a list of trigger",

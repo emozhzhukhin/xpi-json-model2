@@ -1,0 +1,39 @@
+name: proj2
+description: my second project
+
+flow:
+  name: flow1
+  description: flow description
+  steps:
+    - name: sf1
+      type: Salesforce
+      resource: Salesforce_1
+    - name: save1
+      type: Save Message
+    - name: name1
+      type: Save Message
+    - name: sugar1
+      type: Sugar
+      resource: Sugar_1
+    - name: nop1
+      type: NOP
+    - name: nop2
+      type: NOP
+
+  triggers:
+    - name: sf trigger
+      type: Salesforce
+      service: Salesforce_1
+    - name: sugar trigger
+      type: Sugar
+      service: Sugar_2
+
+  relations:
+    - source: sf1
+      target: save1
+    - source: save1
+      target: name1
+    - source: name1
+      target: sugar1
+    - source: sugar1
+      target: sf1

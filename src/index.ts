@@ -26,6 +26,7 @@ function validateCallback(elem: string | { data: string[] }, name: string) {
 
 function validatePairsCallback(elem: {schema: string, data: string}) {
   let buffer = fs.readFileSync(path.resolve(__dirname, 'schema\\' + elem.schema));
+  // tslint:disable-next-line: no-shadowed-variable
   const schema = JSON.parse(buffer.toString());
   addSchema(schema);
   buffer = fs.readFileSync(path.resolve(__dirname, 'data\\' + elem.data));

@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "resourcesSF": {
+      "type": "string",
+      "description": "Just select a resource",
+      "enum": [
+        "Salesforce_1",
+        "Salesforce_2"
+      ]
+    },
+    "resourcesSugar": {
+      "type": "string",
+      "description": "Just select a resource",
+      "enum": [
+        "Sugar_1",
+        "Sugar_2"
+      ]
+    },
+    "servicesSF": {
+      "$ref": "#/definitions/resourcesSF"
+    },
+    "servicesSugar": {
+      "$ref": "#/definitions/resourcesSugar"
+    }
+  }
+}

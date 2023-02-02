@@ -16,7 +16,9 @@
     "./src/schema/flow.json": ["/src/yaml/f*"],
     "./src/schema/project.json": ["/src/yaml/p*"],
     "./src/schema/jproject.json": ["/src/yaml/jp*"],
+    "./src/schema/hproject.json": ["/src/yaml/hp*"],
     "./src/schema/project.yml": ["/src/yaml/yp*"],
+    "./src/schema/workflows.json": ["/src/yaml/w*"],
   },
   "redhat.telemetry.enabled": false,
 

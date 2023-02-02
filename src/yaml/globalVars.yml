@@ -1,0 +1,6 @@
+- name: gvar1
+  type: Alpha
+  default: value1
+- name: gvar2
+  type: Alpha
+  default: value2

@@ -1,0 +1,24 @@
+name: project5
+flow: 
+  name: parallel2
+  description: this flow updates 2 global variables in 2 parallel steps
+  start: immediately
+  steps:
+    root:
+      name: nop1
+      type: NOP
+    linear:
+      - name: flowData1
+        type: Flow Data
+        config: update gvar1
+        steps:
+        - name: save message1
+          type: Save Message
+          config: concatenate gvar1 and gvar2
+    parallel:
+      - name: flowData2
+        type: Flow Data
+        config: update gvar2  
+    wait:
+      flowData1
+        

@@ -1,0 +1,39 @@
+name: project
+flow: 
+  name: flow1
+  description: this flow updates the global variable gvar1, gvar2 and save it's concatenation in the activity log
+  start: 
+    immediately
+  steps:
+    - name: nop1
+      type: NOP
+    - name: nop2
+      type: NOP
+      steps:
+        - name: flowData1
+          type: Flow Data
+          config: update gvar1
+          steps:
+            - name: save1
+              type: Save Message
+              config: concatenate gvar1 and gvar2
+        - name: flowData3 
+          type: Flow Data
+      parallel steps:
+        - name: flowData2
+          type: Flow Data
+          config: update gvar2
+          steps:
+            - name: flowData22
+              type: Flow Data
+            - name: flowData23
+              type: Flow Data
+            - name: flowData24
+              type: Flow Data
+        - name: flowData4
+          type: Flow Data
+          steps:
+          - name: flowData42
+            type: Flow Data
+      wait: 
+        save1

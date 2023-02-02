@@ -1,0 +1,13 @@
+main:
+  params: []
+  steps:
+    - step1:
+        call: sys.sleep
+    - step2:
+        call: http.get
+    - step3:
+        call: http.post
+        next: step1
+
+    
+
